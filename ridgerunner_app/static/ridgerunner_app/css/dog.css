@@ -1,0 +1,44 @@
+@import url(./global.css);
+@import url(./components/pedigree.css);
+main {
+  display: grid;
+  gap: var(--g-bigger);
+  grid-template-columns: 2fr 0fr 1fr;
+  grid-auto-rows: max-content;
+}
+main > .card:first-child, main > section:nth-child(3) {
+  grid-column: 1/3;
+}
+main > .card:first-child {
+  grid-row: 1/2;
+}
+main > .sidebar {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+main > section:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2/3;
+  row-gap: var(--g-bigger);
+}
+main > section:nth-child(3) > #mentality_index, main > section:nth-child(3) #mh, main > section:nth-child(3) #bph, main > section:nth-child(3) #litters, main > section:nth-child(3) #pedigree {
+  scroll-margin-top: 219px;
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr 0fr;
+  }
+  main > .card:first-child, main > .sidebar, main > section:nth-child(3) {
+    grid-column: 1/3;
+  }
+  main > .sidebar {
+    grid-row: 2/3;
+  }
+  main > section:nth-child(3) {
+    grid-row: 3/4;
+  }
+}
+
+/*# sourceMappingURL=dog.css.map */

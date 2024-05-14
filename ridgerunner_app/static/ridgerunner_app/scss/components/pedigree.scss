@@ -1,0 +1,119 @@
+.pedigree {
+    border-top: 0.5px solid var(--c-green-light);
+    border-bottom: 0.5px solid var(--c-green-light);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+
+    > div {
+        border: var(--border) var(--c-green-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--g-big);
+
+        > p {
+            font-size: var(--f-smaller);
+
+            &:first-child {
+                font-family: 'Roboto Mono';
+            }
+        }
+    }
+
+    // FATHER
+    > :first-child {
+        border-left: unset;
+        grid-column: 1 / 2;
+        grid-row: 1 / 5;
+        padding-left: var(--g-bigger);
+    }
+
+        // GRANDFATHER
+        > :nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+        }
+
+            // GREAT-GRANDFATHER
+            > :nth-child(3) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            // GREAT-GRANDMOTHER
+            > :nth-child(4) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+        // GRANDMOTHER
+        > :nth-child(5) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 5;
+        }
+
+            // GREAT-GRANDFATHER
+            > :nth-child(6) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 3 / 4;
+            }
+
+            // GREAT-GRANDMOTHER
+            > :nth-child(7) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 4 / 5;
+            }
+
+    // MOTHER
+    > :nth-child(8) {
+        border-left: unset;
+        grid-column: 1 / 2;
+        grid-row: 5 / 9;
+        padding-left: var(--g-bigger);
+    }
+
+        // GRANDFATHER
+        > :nth-child(9) {
+            grid-column: 2 / 3;
+            grid-row: 5 / 7;
+        }
+
+            // GREAT-GRANDFATHER
+            > :nth-child(10) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 5 / 6;
+            }
+
+            // GREAT-GRANDMOTHER
+            > :nth-child(11) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 6 / 7;
+            }
+
+        // GRANDMOTHER
+        > :nth-child(12) {
+            grid-column: 2 / 3;
+            grid-row: 7 / 9;
+        }
+
+            // GREAT-GRANDFATHER
+            > :nth-child(13) {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 7 / 8;
+            }
+
+            // GREAT-GRANDMOTHER
+            > :last-child {
+                border-right: unset;
+                grid-column: 3 / 4;
+                grid-row: 8 / 9;
+            }
+}

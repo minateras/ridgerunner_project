@@ -1,0 +1,11 @@
+__pycache__
+.DS_Store
+.vscode
+node_modules
+.env
+*.mo
+migrations/
+*.css.map
+workingridge_app
+package.json
+TODO.md

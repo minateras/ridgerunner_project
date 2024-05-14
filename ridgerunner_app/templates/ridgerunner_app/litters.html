@@ -1,0 +1,33 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/litters.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% static "ridgerunner_app/js/litters.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        {% translate "Litters" as title %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            {% for litter in litters %}
+                {% include "./components/litter_card.html" with litter=litter %}
+            {% endfor %}
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

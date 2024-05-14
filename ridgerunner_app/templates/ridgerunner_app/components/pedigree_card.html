@@ -1,0 +1,214 @@
+{% load i18n %}
+{% load filters %}
+<div class="card column" id="pedigree" name="pedigree">
+    <section class="heading"><h1>{% translate "Pedigree"|upper %}</h1></section>
+    <section class="content">
+        <p>
+            {% if first_name != None %}
+                {% if inbreeding_coefficient != None %}
+                    {% blocktranslate trimmed with first_name=first_name inbreeding_coefficient=inbreeding_coefficient %}
+                    {{ first_name }}'s pedigree in 3 generations. The inbreeding coefficient is {{ inbreeding_coefficient }} %. Note that only titles in dog sports (i.e., not show merits) are included. See SKK Hunddata or SKK Avelsdata for the complete version.
+                    {% endblocktranslate %}
+                {% else %}
+                    {% blocktranslate trimmed with first_name=first_name %}
+                    {{ first_name }}'s pedigree in 3 generations. Note that only titles in dog sports (i.e., not show merits) are included. See SKK Hunddata or SKK Avelsdata for the complete version.
+                    {% endblocktranslate %}
+                {% endif %}
+            {% else %}
+                {% if inbreeding_coefficient != None %}
+                    {% blocktranslate trimmed with inbreeding_coefficient=inbreeding_coefficient %}
+                    The puppies' pedigree in 3 generations. The inbreeding coefficient is {{ inbreeding_coefficient }} %. Note that only titles in dog sports (i.e., not show merits) are included. See SKK Hunddata or SKK Avelsdata for the complete version.
+                    {% endblocktranslate %}
+                {% else %}
+                    {% blocktranslate trimmed %}
+                    The puppies' pedigree in 3 generations. Note that only titles in dog sports (i.e., not show merits) are included. See SKK Hunddata or SKK Avelsdata for the complete version.
+                    {% endblocktranslate %}
+                {% endif %}
+            {% endif %}
+        </p>
+        <div class="pedigree">
+            <!-- FATHER -->
+            <div>
+                {% if father != None %}
+                    {% if father.official_titles|length > 0 %}
+                        <p>{{ father.official_titles|format_list }}</p>
+                    {% else %}
+                        <p>&nbsp;</p>
+                    {% endif %}
+                    <p>{{ father.kennel_name }}</p>
+                {% else %}
+                TBA
+                {% endif %}
+            </div>
+                <!-- GRANDFATHER -->
+                <div>
+                    {% if father != None %}
+                        {% if father.father.official_titles|length > 0 %}
+                            <p>{{ father.father.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ father.father.kennel_name }}</p>
+                    {% else %}
+                    TBA
+                    {% endif %}
+                </div>
+                    <!-- GREAT-GRANDFATHER -->
+                    <div>
+                        {% if father != None %}
+                            {% if father.father.father.official_titles|length > 0 %}
+                                <p>{{ father.father.father.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ father.father.father.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                    <!-- GREAT-GRANDMOTHER -->
+                    <div>
+                        {% if father != None %}
+                            {% if father.father.mother.official_titles|length > 0 %}
+                                <p>{{ father.father.mother.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ father.father.mother.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                <!-- GRANDMOTHER -->
+                <div>
+                    {% if father != None %}
+                        {% if father.mother.official_titles|length > 0 %}
+                            <p>{{ father.mother.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ father.mother.kennel_name }}</p>
+                    {% else %}
+                    TBA
+                    {% endif %}
+                </div>
+                    <!-- GREAT-GRANDFATHER -->
+                    <div>
+                        {% if father != None %}
+                            {% if father.mother.father.official_titles|length > 0 %}
+                                <p>{{ father.mother.father.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ father.mother.father.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                    <!-- GREAT-GRANDMOTHER -->
+                    <div>
+                        {% if father != None %}
+                            {% if father.mother.mother.official_titles|length > 0 %}
+                                <p>{{ father.mother.mother.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ father.mother.mother.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+            <!-- MOTHER -->
+            <div>
+                {% if mother != None %}
+                    {% if mother.official_titles|length > 0 %}
+                        <p>{{ mother.official_titles|format_list }}</p>
+                    {% else %}
+                        <p>&nbsp;</p>
+                    {% endif %}
+                    <p>{{ mother.kennel_name }}</p>
+                {% else %}
+                TBA
+                {% endif %}
+            </div>
+                <!-- GRANDFATHER -->
+                <div>
+                    {% if mother != None %}
+                        {% if mother.father.official_titles|length > 0 %}
+                            <p>{{ mother.father.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ mother.father.kennel_name }}</p>
+                    {% else %}
+                    TBA
+                    {% endif %}
+                </div>
+                    <!-- GREAT-GRANDFATHER -->
+                    <div>
+                        {% if mother != None %}
+                            {% if mother.father.father.official_titles|length > 0 %}
+                                <p>{{ mother.father.father.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ mother.father.father.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                    <!-- GREAT-GRANDMOTHER -->
+                    <div>
+                        {% if mother != None %}
+                            {% if mother.father.mother.official_titles|length > 0 %}
+                                <p>{{ mother.father.mother.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ mother.father.mother.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                <!-- GRANDMOTHER -->
+                <div>
+                    {% if mother != None %}
+                        {% if mother.mother.official_titles|length > 0 %}
+                            <p>{{ mother.mother.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ mother.mother.kennel_name }}</p>
+                    {% else %}
+                    TBA
+                    {% endif %}
+                </div>
+                    <!-- GREAT-GRANDFATHER -->
+                    <div>
+                        {% if mother != None %}
+                            {% if mother.mother.father.official_titles|length > 0 %}
+                                <p>{{ mother.mother.father.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ mother.mother.father.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+                    <!-- GREAT-GRANDMOTHER -->
+                    <div>
+                        {% if mother != None %}
+                            {% if mother.mother.mother.official_titles|length > 0 %}
+                                <p>{{ mother.mother.mother.official_titles|format_list }}</p>
+                            {% else %}
+                                <p>&nbsp;</p>
+                            {% endif %}
+                            <p>{{ mother.mother.mother.kennel_name }}</p>
+                        {% else %}
+                        TBA
+                        {% endif %}
+                    </div>
+        </div>
+    </section>
+</div>

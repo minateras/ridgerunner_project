@@ -1,0 +1,99 @@
+{% load i18n %}
+{% load filters %}
+<div class="table" style="{% if standalone %}grid-template-columns: repeat(calc(1 + {{ offspring|length }}), 1fr); overflow-x: scroll;{% else %}grid-column-end: calc(1 + {{ offspring|length }} + 1);{% endif %}">
+    <div class="table-heading left"></div>
+    {% for puppy in offspring %}
+        <div class="table-heading {% if forloop.last %}right{% endif %}">{{ puppy.first_name }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Gender"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.gender %}{% translate "Female" %}{% else %}{% translate "Male" %}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Height"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.height|tba }} {% if puppy.height != None%}{% translate "cm" %}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Weight"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.weight|tba }} {% if puppy.weight != None%}{% translate "kg" %}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Correct ridge"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_ridge %}{{ puppy.correct_ridge }}{% else %}{{ puppy.correct_ridge_comment }}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Correct tail"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_tail %}{{ puppy.correct_tail }}{% else %}{{ puppy.correct_tail_comment }}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Scissor bite"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.scissor_bite %}{{ puppy.scissor_bite }}{% else %}{{ puppy.scissor_bite_comment }}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Dermoid sinus"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.dermoid_sinus }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Cryptorchid"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.cryptorchid }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Hip joints"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.hip_joints|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Elbows"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.elbows|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "DM"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.degenerative_myelopathy|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "EOAD"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.early_onset_adult_deafness|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "JME"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.juvenile_myoclonic_epilepsy|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Ridge"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.ridge|tba }}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Mentality tested"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.bph == None and puppy.mh == None %}{% translate "False" %}{% else %}{% translate "True" %}{% endif %}</div>
+    {% endfor %}
+
+    <div class="table-heading left">{% translate "Titles"|upper %}</div>
+    {% for puppy in offspring %}
+        <div {% if forloop.last %}class="right"{% endif %}>
+            {% for title in puppy.official_titles %}
+                <p>{{ title|switch_spaces_to_code|safe|escape }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    {% if litter.litter.kennel_name == None %}
+        <div class="table-heading"><p>{% translate "Own page"|upper %}</p></div>
+        {% for puppy in offspring %}
+            <div {% if forloop.last %}class="right"{% endif %}><a href="../dogs/{{ puppy.kennel_name|lower|switch_spaces_to_underscores }}">Link</a></div> {% comment %}TODO Implement.{% endcomment %}
+        {% endfor %}
+    {% endif %}
+</div>

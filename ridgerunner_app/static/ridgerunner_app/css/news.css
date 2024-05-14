@@ -1,0 +1,41 @@
+@import url(./global.css);
+main {
+  display: grid;
+  gap: var(--g-bigger);
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: max-content;
+}
+main > section:first-child, main > .sidebar {
+  grid-row: 1/2;
+}
+main > section:first-child {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/2;
+  row-gap: var(--g-bigger);
+}
+main > .sidebar {
+  grid-column: 2/3;
+}
+main > .sidebar > h1 {
+  font-family: "Roboto Mono";
+  font-size: var(--f-small);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  main > section:first-child, main > .sidebar {
+    grid-column: 1/2;
+  }
+  main > section:first-child {
+    grid-row: 2/3;
+  }
+  main > .sidebar {
+    grid-row: 1/2;
+  }
+}
+
+/*# sourceMappingURL=news.css.map */

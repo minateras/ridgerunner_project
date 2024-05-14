@@ -1,0 +1,29 @@
+@import url(./global.css);
+main {
+  display: grid;
+  gap: var(--g-bigger);
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: max-content;
+}
+main > .card:first-child {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main > .sidebar {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  main > .card:first-child, main > .sidebar {
+    grid-column: 1/2;
+  }
+  main > .sidebar {
+    grid-row: 2/3;
+  }
+}
+
+/*# sourceMappingURL=about_us.css.map */

@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load filters %}
+<div class="card grid hover" id="{% if litter.litter.date_of_birth == None %}{% url 'puppies' %}{% elif litter.litter.kennel_name == None %}{{ litter.litter.letter|lower }}_litter{% endif %}" style="grid-template-columns: {% if offspring|length > 0 %}repeat(calc(1 + {{ offspring|length }}), 1fr){% else %}max-content 1fr{% endif %};">
+    <div class="letter">
+        <h1>{{ litter.litter.letter }}</h1>
+        <p>{% translate "Litter"|upper %}</p>
+    </div>
+    <section class="combination" style="grid-column-end: {% if offspring|length > 0 %}calc(1 + {{ offspring|length }} + 1);{% else %}3;{% endif %}">
+        {% translate "Planned litter" as planned_litter %}
+        <h2>{{ litter.litter.date_of_birth|format_date|default_if_none:planned_litter }} @ {% translate "Kennel"|lower %} {{ litter.litter.kennel_name|default_if_none:"Messenger Dog" }}</h2>
+        <section>
+            {% if litter.litter.mother.official_titles != None %}
+                <h3>{{ litter.litter.mother.official_titles|format_list }}</h3>
+            {% endif %}
+            <h3>{% if litter.litter.mother == None %}*{% translate "Kennel name"|upper %}*{% else %}{{ litter.litter.mother.kennel_name }}{% endif %}</h3>
+        </section>
+        <p>X</p>
+        <section>
+            {% if litter.litter.father.official_titles != None %}
+                <h3>{{ litter.litter.father.official_titles|format_list }}</h3>
+            {% endif %}
+            <h3>{% if litter.litter.father == None %}TBA{% else %}{{ litter.litter.father.kennel_name }}{% endif %}</h3>
+        </section>
+        {% if offspring != None %}
+            <button class="button">{% if litter.litter.date_of_birth == None %}{% translate "Show the litter's own page" %}{% else %}{% translate 'Show detailed view' %}{% endif %}</button>
+        {% endif %}
+    </section>
+    {% if offspring|length > 0 %}
+        {% include "./litter_statistics.html" with standalone=False litter=litter offspring=offspring %}
+    {% endif %}
+</div>

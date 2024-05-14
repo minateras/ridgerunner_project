@@ -1,0 +1,77 @@
+@import url(./global.css);
+main {
+  display: grid;
+  gap: var(--g-bigger);
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: max-content;
+}
+main > .card:first-child {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main > .card:first-child > section > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-bigger);
+}
+main > .card:first-child > section > form > .input-row {
+  column-gap: var(--g-bigger);
+  display: flex;
+  flex-direction: row;
+}
+main > .card:first-child > section > form > .input-row > .input-column {
+  flex: 1;
+}
+main > .card:first-child > section > form .input-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-big);
+}
+main > .card:first-child > section > form .input-column > input, main > .card:first-child > section > form .input-column > textarea {
+  background-color: var(--c-gray-light);
+  padding: var(--g-big);
+}
+main > .card:first-child > section > form .input-column > input::placeholder, main > .card:first-child > section > form .input-column > textarea::placeholder {
+  color: var(--c-gray-dark);
+}
+main > .card:first-child > section > form .input-column > input[aria-invalid=true], main > .card:first-child > section > form .input-column > textarea[aria-invalid=true] {
+  border: var(--border) var(--c-red);
+}
+main > .card:first-child > section > form .input-column > input[type=submit]:not(:disabled), main > .card:first-child > section > form .input-column > textarea[type=submit]:not(:disabled) {
+  border-radius: unset;
+}
+main > .card:first-child > section > form .input-column > input[type=submit]:not(:disabled):hover, main > .card:first-child > section > form .input-column > textarea[type=submit]:not(:disabled):hover {
+  background-color: var(--c-green-light);
+  transition: background-color var(--t-short);
+}
+main > .card:first-child > section > form .input-column > textarea {
+  resize: none;
+}
+main > .card:first-child > section > form .input-column > .error-message {
+  color: var(--c-red);
+  padding-left: var(--g-big);
+  padding-right: var(--g-big);
+}
+main > .sidebar {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  main > .card:first-child, main > .sidebar {
+    grid-column: 1/2;
+  }
+  main > .card:first-child > section > form > .input-row {
+    column-gap: unset;
+    flex-direction: column;
+    row-gap: var(--g-bigger);
+  }
+  main > .sidebar {
+    grid-row: 2/3;
+  }
+}
+
+/*# sourceMappingURL=contact_us.css.map */

@@ -1,0 +1,88 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/contact_us.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% url "javascript_catalog" %}"></script>
+        <script src="{% static "ridgerunner_app/js/contact_us.js" %}" defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+
+
+
+    <body>
+        {% translate "Contact us" as title %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            <div class="card">
+                <section class="heading"><h1>{% translate "Contact form"|upper %}</h1></section>
+                <section class="content">
+                    {% if success_message == None %}
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="input-row">
+                                <div class="input-column">
+                                    <input aria-invalid="{% if first_name_error_message is None %}false{% else %}true{% endif %}" id="first_name" name="first_name" placeholder="{% translate "First name" %}" type="text" value="{% if first_name is not None %}{{ first_name }}{% endif %}">
+                                    <p class="error-message" id="first_name_error_message" style="{% if first_name_error_message is None %}display: none;{% endif %}">{{ first_name_error_message }}</p>
+                                </div>
+                                <div class="input-column">
+                                    <input aria-invalid="{% if last_name_error_message is None %}false{% else %}true{% endif %}" id="last_name" name="last_name" placeholder="{% translate "Last name" %}" type="text" value="{% if last_name is not None %}{{ last_name }}{% endif %}">
+                                    <p class="error-message" id="last_name_error_message" style="{% if last_name_error_message is None %}display: none;{% endif %}">{{ last_name_error_message }}</p>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-column">
+                                    <input aria-invalid="{% if email_error_message is None %}false{% else %}true{% endif %}" id="email" name="email" pattern="[a-z]+@[a-z]+\.[a-z]{2,}" placeholder="{% translate "Email address" %}" type="text" value="{% if email is not None %}{{ email }}{% endif %}">
+                                    <p class="error-message" id="email_error_message" style="{% if email_error_message is None %}display: none;{% endif %}">{{ email_error_message }}</p>
+                                </div>
+                                <div class="input-column">
+                                    <input aria-invalid="{% if tel_error_message is None %}false{% else %}true{% endif %}" id="tel" name="tel" pattern="\+[0-9]{5,15}" placeholder="{% translate "Phone number (optional)" %}" type="text" value="{% if tel is not None %}{{ tel }}{% endif %}">
+                                    <p class="error-message" id="tel_error_message" style="{% if tel_error_message is None %}display: none;{% endif %}">{{ tel_error_message }}</p>
+                                </div>
+                            </div>
+                            <div class="input-column">
+                                <input aria-invalid="{% if subject_error_message is None %}false{% else %}true{% endif %}" id="subject" name="subject" placeholder="{% translate "Subject" %}" type="text" value="{% if subject is not None %}{{ subject }}{% endif %}">
+                                <p class="error-message" id="subject_error_message" style="{% if subject_error_message is None %}display: none;{% endif %}">{{ subject_error_message }}</p>
+                            </div>
+                            <div class="input-column">
+                                <textarea aria-invalid="{% if message_error_message is None %}false{% else %}true{% endif %}" id="message" name="message" cols="10" rows="10" placeholder="{% translate "Message" %}">{% if message is not None %}{{ message }}{% endif %}</textarea>
+                                <p class="error-message" id="message_error_message" style="{% if message_error_message is None %}display: none;{% endif %}">{{ message_error_message }}</p>
+                            </div>
+                            <div class="input-column">
+                                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="{{ RECAPTCHA_SITE_KEY }}"></div>
+                                <p class="error-message" id="recaptcha_error_message" style="{% if recaptcha_error_message is None %}display: none;{% endif %}">{{ recaptcha_error_message }}</p>
+                            </div>
+                            <div class="input-column">
+                                <input disabled id="send" name="send" type="submit" value="{% translate "Send" %}">
+                            </div>
+                        </form>
+                    {% else %}
+                        <p>{{ success_message }}</p>
+                    {% endif %}
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <section>
+                    <h1>{% translate "Information"|upper %}</h1>
+                    <p>För att minimera risken för spammejl har vi valt att använda ett kontaktformulär. För att vi ska kunna svara dig måste du ange din mejladress, men du kan också ange ditt telefonnummer om du önskar höras på telefon.</p>
+                    <p>Du är välkommen att kontakta oss om du har någon fundering, vill träffa oss och våra hundar eller om du vill skriva upp dig på vår väntelista och därmed anmäla ditt intresse för en valp.</p>
+                    <p>Vi tar gärna emot tips på hanhundar. Läs igenom våra avelsmål under <a href="{% url "about_us" %}">{% translate "About us" %}</a> så får du en idé vad vi letar efter.</p> {% comment %}TODO Tack vare Minas sidoprojekt, <a href="">Workingridge</a>, har vi bra koll på rasens svenska individer. Tips på utländska hundar är därför av särskilt intresse.{% endcomment %}
+                </section>
+            </div>
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

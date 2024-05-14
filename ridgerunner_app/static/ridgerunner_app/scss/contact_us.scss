@@ -1,0 +1,94 @@
+@import url(./global.css);
+
+// MAIN
+main {
+    display: grid;
+    gap: var(--g-bigger);
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: max-content;
+
+    > .card:first-child {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        > section > form {
+            display: flex;
+            flex-direction: column;
+            row-gap: var(--g-bigger);
+
+            > .input-row {
+                column-gap: var(--g-bigger);
+                display: flex;
+                flex-direction: row;
+
+                > .input-column {
+                    flex: 1;
+                }
+            }
+
+            .input-column {
+                display: flex;
+                flex-direction: column;
+                row-gap: var(--g-big);
+
+                > input, > textarea {
+                    background-color: var(--c-gray-light);
+                    padding: var(--g-big);
+
+                    &::placeholder {
+                        color: var(--c-gray-dark);
+                    }
+
+                    &[aria-invalid='true'] {
+                        border: var(--border) var(--c-red);
+                    }
+
+                    &[type='submit']:not(:disabled) {
+                        border-radius: unset;
+
+                        &:hover { // TODO Hover should be a class defined in global.scss.
+                            background-color: var(--c-green-light);
+                            transition: background-color var(--t-short);
+                        }
+                    }
+                }
+
+                > textarea {
+                    resize: none;
+                }
+
+                > .error-message {
+                    color: var(--c-red);
+                    padding-left: var(--g-big);
+                    padding-right: var(--g-big);
+                }
+            }
+        }
+    }
+
+    > .sidebar {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+@media (max-width: 600px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+        > .card:first-child, > .sidebar {
+            grid-column: 1 / 2;
+        }
+
+        > .card:first-child > section > form > .input-row {
+            column-gap: unset;
+            flex-direction: column;
+            row-gap: var(--g-bigger);
+        }
+
+        > .sidebar {
+            grid-row: 2 / 3;
+        }
+    }
+}

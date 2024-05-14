@@ -1,0 +1,222 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/litter.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% static "ridgerunner_app/js/litter.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        {% if litter.litter.date_of_birth == None %}{% translate "Puppies" as title %}{% else %}{% blocktranslate asvar title trimmed with letter=litter.litter.letter %}Litter {{letter}}{% endblocktranslate %}{% endif %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            <div class="card image content" id="one">
+                {% if litter.litter.mother.image != None %}
+                    <img alt="{{ litter.litter.mother.first_name }}" src="{% static litter.litter.mother.image %}">
+                {% else %}
+                    <div class="img-placeholder"></div>
+                {% endif %}
+                <section>
+                    {% if litter.litter.mother.first_name != None %}
+                        <h1>{{ litter.litter.mother.first_name }}</h1>
+                    {% else %}
+                        <h1>*{% translate "First name"|upper %}*</h1>
+                    {% endif %}
+                    {% if litter.litter.mother.official_titles != None %}
+                        <p class="official-titles">{{ litter.litter.mother.official_titles|format_list }}</p>
+                    {% endif %}
+                    {% if litter.litter.mother.kennel_name != None %}
+                        <p>{{ litter.litter.mother.kennel_name }}</p>
+                    {% endif %}
+                    {% if litter.litter.mother.date_of_birth != None %}
+                        <p>{{ litter.litter.mother.date_of_birth|format_date }}</p>
+                    {% endif %}
+                    {% if litter.litter.mother.registration_number != None %}
+                        <p>{{ litter.litter.mother.registration_number }}</p>
+                    {% endif %}
+                    {% if litter.litter.mother.first_name != None and litter.litter.mother.kennel_name != None %}
+                        <p>Läs mer om {{ litter.litter.mother.first_name }} på hennes egna <a href="../dogs/{{ litter.litter.mother.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
+                    {% endif %}
+                </section>
+            </div>
+
+            <div class="card image content" id="two">
+                {% if litter.litter.father.image != None %}
+                    <img alt="{{ litter.litter.father.first_name }}" src="{% static litter.litter.father.image %}">
+                {% else %}
+                    <div class="img-placeholder"></div>
+                {% endif %}
+                <section>
+                    {% if litter.litter.father.first_name != None %}
+                        <h1>{{ litter.litter.father.first_name }}</h1>
+                    {% else %}
+                        <h1>TBA</h1>
+                    {% endif %}
+                    {% if litter.litter.father.official_titles != None %}
+                        <p class="official-titles">{{ litter.litter.father.official_titles|format_list }}</p>
+                    {% endif %}
+                    {% if litter.litter.father.kennel_name != None %}
+                        <p>{{ litter.litter.father.kennel_name }}</p>
+                    {% endif %}
+                    {% if litter.litter.father.date_of_birth != None %}
+                        <p>{{ litter.litter.father.date_of_birth|format_date }}</p>
+                    {% endif %}
+                    {% if litter.litter.father.registration_number != None %}
+                        <p>{{ litter.litter.father.registration_number }}</p>
+                    {% endif %}
+                    {% comment %}{% if litter.litter.father.first_name != None and litter.litter.father.kennel_name != None %}
+                        <p>Läs mer om {{ litter.litter.father.first_name }} på hans egna <a href="../dogs/{{ litter.litter.father.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
+                    {% endif %}{% endcomment %}
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <section>
+                    <h1>{% translate "Date of birth"|upper %}</h1>
+                    <p>{{ litter.litter.date_of_birth|format_date|tba }}</p>
+                </section>
+                <section>
+                    <h1>{% translate "Inbreeding coefficient"|upper %}</h1>
+                    <p>{% if litter.litter.inbreeding_coefficient != None %}{{ litter.litter.inbreeding_coefficient }} %{% else %}TBA{% endif %}</p>
+                </section>
+                {% if litter.litter.number_of_males != None and litter.litter.number_of_females != None %}
+                <section>
+                    <h1>{% translate "Number of puppies"|upper %}</h1>
+                    <p>
+                        {% blocktranslate trimmed with number_of_males=litter.litter.number_of_males number_of_females=litter.litter.number_of_females %}
+                        {{ number_of_males }} males & {{number_of_females}} females
+                        {% endblocktranslate %}
+                    </p>
+                </section>
+                {% endif %}
+                {% if offspring|length > 0 %}
+                <section>
+                    <h1>{% translate "Statistics"|upper %}</h1>
+                    <p>{% translate "See" %} <a href="#statistics">{% translate "below" %}</a>.</p>
+                </section>
+                {% endif %}
+                <section>
+                    <h1>{% translate "Pedigree"|upper %}</h1>
+                    <p>{% translate "See" %} <a href="#pedigree">{% translate "below" %}</a>.</p>
+                </section>
+                {% if litter.litter.mentality_index != None or litter.litter.mh != None or litter.litter.bph != None %}
+                <section>
+                    <h1>{% translate "Mentality tests"|upper %}</h1>
+                    {% if dog.dog.mentality_index != None %}
+                    <p>{% translate "Mentality index"|upper %}: {% translate "See" %} <a href="#mentality_index">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                    {% if dog.dog.mh != None %}
+                    <p>MH: {% translate "See" %} <a href="#mh">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                    {% if dog.dog.bph != None %}
+                    <p>BPH: {% translate "See" %} <a href="#bph">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                </section>
+                {% endif %}
+                {% if links|length > 0 %}
+                    <section>
+                        <h1>{% translate "Links"|upper %}</h1>
+                        <section class="links">
+                            {% for link in links %}
+                                <a class="button" href="{{ link.link.url }}" target="_blank">{{ link.name }}</a>
+                            {% endfor %}
+                        </section>
+                    </section>
+                {% endif %}
+            </div>
+
+            <section>
+                <div class="card">
+                    <section class="heading"><h1>{% translate "Presentation"|upper %}</h1></section>
+                    <section class="content">
+                        {{ litter.presentation|safe|escape }}
+                    </section>
+                </div>
+
+                {% if litter.mentality != None %}
+                <div class="card">
+                    <section class="heading"><h1>{% translate "Mentality"|upper %}</h1></section>
+                    <section class="content">
+                        {{ litter.mentality|safe|escape }}
+                    </section>
+                </div>
+                {% endif %}
+
+                {% if litter.litter.mentality_index != None %}
+                    <div class="card column" id="mentality_index">
+                        <div class="mentality-index">
+                            <div class="table-heading left" style="border-top-left-radius: var(--border-radius); font-weight: 600;">{% translate "Mentality index"|upper %}</div>
+                            <div class="table-heading">{% translate "Breeding Value" %}</div>
+                            <div class="table-heading right" style="border-top-right-radius: var(--border-radius);">{% translate "Confidence" %}</div>
+
+                            <div class="table-heading left">{% translate "Sociality" %}</div>
+                            <div>{{ litter.litter.mentality_index.0.0 }}</div>
+                            <div class="right">{{ litter.litter.mentality_index.0.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Social Confidence" %}</div>
+                            <div>{{ litter.litter.mentality_index.1.0 }}</div>
+                            <div class="right">{{ litter.litter.mentality_index.1.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Playfulness" %}</div>
+                            <div>{{ litter.litter.mentality_index.2.0 }}</div>
+                            <div class="right">{{ litter.litter.mentality_index.2.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Environmental Confidence" %}</div>
+                            <div>{{ litter.litter.mentality_index.3.0 }}</div>
+                            <div class="right">{{ litter.litter.mentality_index.3.1 }}</div>
+
+                            <div class="table-heading left" style="border-bottom-left-radius: var(--border-radius);">{% translate "Aggressiveness" %}</div>
+                            <div>{{ litter.litter.mentality_index.4.0 }}</div>
+                            <div class="right">{{ litter.litter.mentality_index.4.1 }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if litter.litter.mh != None or litter.litter.bph != None %}
+                    <div class="card column">
+                        {% if litter.litter.mh != None %}
+                            <img alt="MH" class="inspect" id="mh" src="{% static litter.litter.mh %}">
+                            <dialog>
+                                <h1>{{ title|upper }}{% translate "'S" %} MH</h1>
+                                <p>...</p>
+                                <img alt="MH" src="{% static litter.litter.mh|with_explanations %}">
+                            </dialog>
+                        {% endif %}
+                        {% if litter.litter.bph != None %}
+                            <img alt="BPH" class="inspect" id="bph" src="{% static litter.litter.bph %}">
+                            <dialog>
+                                <h1>{{ title|upper }}{% translate "'S" %} BPH</h1>
+                                <p>...</p>
+                                <img alt="BPH" src="{% static litter.litter.bph|with_explanations %}">
+                            </dialog>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                {% if offspring|length > 0 %}
+                    <div class="card column" id="statistics" name="statistics">
+                        <section class="heading"><h1>{% translate "Statistics"|upper %}</h1></section>
+                        <section class="content">{% include "./components/litter_statistics.html" with standalone=True litter=litter offspring=offspring %}</section>
+                    </div>
+                {% endif %}
+
+                {% include "./components/pedigree_card.html" with father=litter.litter.father mother=litter.litter.mother inbreeding_coefficient=litter.litter.inbreeding_coefficient %}
+            </section>
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

@@ -1,0 +1,49 @@
+@import url(./global.css);
+
+// MAIN
+main {
+    display: grid;
+    gap: var(--g-bigger);
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: max-content;
+
+    > section:first-child, > .sidebar {
+        grid-row: 1 / 2;
+    }
+
+    > section:first-child {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / 2;
+        row-gap: var(--g-bigger);
+    }
+
+    > .sidebar {
+        grid-column: 2 / 3;
+
+        > h1 {
+            font-family: 'Roboto Mono';
+            font-size: var(--f-small);
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+        > section:first-child, > .sidebar {
+            grid-column: 1 / 2;
+        }
+
+        > section:first-child {
+            grid-row: 2 / 3;
+        }
+
+        > .sidebar {
+            grid-row: 1 / 2;
+        }
+    }
+}

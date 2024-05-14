@@ -1,0 +1,25 @@
+{% load i18n %}
+<header>
+    <div class="logotype-navigation">
+        <section class="logotype">
+            <a href="{% url "news" %}" style="display: none;">MW</a>
+            <a href="{% url "news" %}">KENNEL MESSENGER DOG</a> <!-- RIDGERUNNER -->
+        </section>
+        <nav>
+            <a href="{% url "news" %}">{% translate "News"|upper %}</a>
+            <a href="{% url "dogs" %}">{% translate "Dogs"|upper %}</a>
+            <a href="{% url "puppies" %}">{% translate "Puppies"|upper %}</a>
+            <a href="{% url "litters" %}">{% translate "Litters"|upper %}</a>
+            <a href="{% url "about_us" %}">{% translate "About us"|upper %}</a>
+            <a href="{% url "contact_us" %}">{% translate "Contact us"|upper %}</a>
+        </nav>
+    </div>
+    <div class="title">
+        <section>
+            {% if url_of_previous_page != None and title_of_previous_page != None %}
+                <a href="{{ url_of_previous_page }}" id="previousPage">{{ title_of_previous_page|upper }}</a>
+            {% endif %}
+            <h1>{{ title|upper }}</h1>
+        </section>
+    </div>
+</header>

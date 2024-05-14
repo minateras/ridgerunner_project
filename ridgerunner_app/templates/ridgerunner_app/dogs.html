@@ -1,0 +1,69 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/dogs.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% static "ridgerunner_app/js/dogs.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        {% translate "Our dogs" as title %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            {% if females|length > 0 %}
+                <h1>{% translate "Females" %}</h1>
+            {% endif %}
+            {% for dog in females %}
+                <div class="card image content hover" id="{{ dog.kennel_name|lower|switch_spaces_to_underscores }}">
+                    <img alt="{{ dog.first_name }}" src="{% static dog.image %}">
+                    <section class="content">
+                        <h1>{{ dog.first_name }}</h1>
+                        {% if dog.official_titles|length > 0 %}
+                            <p class="official-titles">{{ dog.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ dog.kennel_name }}</p>
+                        <p>{{ dog.date_of_birth|format_date }}</p>
+                        <p>{{ dog.registration_number }}</p>
+                    </section>
+                </div>
+            {% endfor %}
+
+            {% if males|length > 0 %}
+                <h1>{% translate "Males" %}</h1>
+            {% endif %}
+            {% for dog in males %}
+                <div class="card image content hover" id="{{ dog.kennel_name|lower|switch_spaces_to_underscores }}">
+                    <img alt="{{ dog.first_name }}" src="{% static dog.image %}">
+                    <section class="content">
+                        <h1>{{ dog.first_name }}</h1>
+                        {% if dog.official_titles|length > 0 %}
+                            <p class="official-titles">{{ dog.official_titles|format_list }}</p>
+                        {% else %}
+                            <p>&nbsp;</p>
+                        {% endif %}
+                        <p>{{ dog.kennel_name }}</p>
+                        <p>{{ dog.date_of_birth|format_date }}</p>
+                        <p>{{ dog.registration_number }}</p>
+                    </section>
+                </div>
+            {% endfor %}
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

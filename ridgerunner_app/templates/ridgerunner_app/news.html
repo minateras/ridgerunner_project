@@ -1,0 +1,70 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/news.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% url "javascript_catalog" %}"></script>
+        <script src="{% static "ridgerunner_app/js/news.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        {% translate "News" as title %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            <section>
+                {% for post in posts %}
+                    <div class="card">
+                        <section class="heading">
+                            <h1>{{ post.caption }}</h1>
+                            {% if post.post.pinned %}
+                                <img class="pinned" src="{% static "ridgerunner_app/assets/icons/pinned.jpg" %}"></img>
+                            {% endif %}
+                        </section>
+                        <h2 class="date">{{ post.post.publication_date|format_date }}</h2>
+                        <section class="content">{{ post.content|safe|escape }}</section>
+                    </div>
+                {% endfor %}
+            </section>
+
+            <div class="sidebar">
+                <h1>{% translate "Congratulations"|upper %}</h1>
+                {% for congrats in congratulations %}
+                    <section>
+                        <h1>{{ congrats.congratulations.publication_date|format_date }}</h1>
+                        <h2>
+                            {% if congrats.congratulations.dog != null %}
+                                <a href="{% url "dog" congrats.congratulations.dog.kennel_name|lower|switch_spaces_to_underscores %}">{{ congrats.congratulations.dog.kennel_name|upper }}</a>
+                            {% else %}
+                                {{ congrats.congratulations.kennel_name|upper }}
+                            {% endif %}
+                        </h2>
+                        <ul>
+                            {% for content in congrats.content %}
+                                <li>
+                                    <div class="bullet"></div>
+                                    <p>{{ content }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <p>{% translate "Congrats to owner" %} {% if congrats.congratulations.dog != null %}{{ congrats.congratulations.dog.owner|format_list }}{% else %}{{ congrats.congratulations.owner|format_list }}{% endif %}!</p>
+                    </section>
+                {% endfor %}
+            </div>
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

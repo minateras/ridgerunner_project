@@ -1,0 +1,520 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-14 12:51+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ridgerunner_project/settings.py:86
+msgid "English"
+msgstr ""
+
+#: ridgerunner_project/settings.py:87
+msgid "Swedish"
+msgstr ""
+
+#: ridgerunner_app/forms.py:7
+#, python-brace-format
+msgid "Exceeded max length ({max_length} characters)."
+msgstr "Överskred maxlängd ({max_length} tecken)."
+
+#: ridgerunner_app/forms.py:8
+#, python-brace-format
+msgid "Please use the following format: {regex}"
+msgstr "Använd följande format: {regex}"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:17
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:13
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid "About us"
+msgstr "Om oss"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:28
+msgid "This page is under development."
+msgstr "Denna sida är under uppbyggnad."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:58
+msgid "Our requirements for breeding"
+msgstr "Våra avelskrav"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:91
+msgid "What you get when you buy a puppy from us"
+msgstr "Vad du får när du köper en valp från oss"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:121
+msgid "Our expectations on you as a puppy buyer"
+msgstr "Våra förväntningar på dig som valpköpare"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/footer.html:4
+msgid "Follow me and the pack on Instagram"
+msgstr "Följ mig och flocken på Instagram"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:9
+#: ridgerunner_app/templates/ridgerunner_app/news.html:19
+msgid "News"
+msgstr "Nyheter"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:10
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:21
+msgid "Dogs"
+msgstr "Hundar"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:11
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:18
+msgid "Puppies"
+msgstr "Valpar"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:12
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:157
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:280
+#: ridgerunner_app/templates/ridgerunner_app/litters.html:18
+msgid "Litters"
+msgstr "Kullar"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:14
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:20
+msgid "Contact us"
+msgstr "Kontakta oss"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:6
+msgid "Litter"
+msgstr "Kullen"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:9
+msgid "Planned litter"
+msgstr "Planerad kull"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:10
+msgid "Kennel"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:15
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:35
+msgid "Kennel name"
+msgstr "Kennelnamn"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:25
+msgid "Show the litter's own page"
+msgstr "Visa kullens egna sida"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_card.html:25
+msgid "Show detailed view"
+msgstr "Visa detaljerad vy"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:9
+msgid "Gender"
+msgstr "Kön"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:11
+msgid "Female"
+msgstr "Tik"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:11
+msgid "Male"
+msgstr "Hane"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:14
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:61
+msgid "Height"
+msgstr "Höjd"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:16
+msgid "cm"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:19
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:65
+msgid "Weight"
+msgstr "Vikt"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:21
+msgid "kg"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:24
+msgid "Correct ridge"
+msgstr "Korrekt ridge"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:29
+msgid "Correct tail"
+msgstr "Korrekt svans"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:34
+msgid "Scissor bite"
+msgstr "Saxbett"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:39
+msgid "Dermoid sinus"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:44
+msgid "Cryptorchid"
+msgstr "Kryptorchid"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:49
+msgid "Hip joints"
+msgstr "Höftleder"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:54
+msgid "Elbows"
+msgstr "Armbågar"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:59
+msgid "DM"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:64
+msgid "EOAD"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:69
+msgid "JME"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:74
+msgid "Ridge"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:79
+msgid "Mentality tested"
+msgstr "Mentaltestad"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
+msgid "False"
+msgstr "Falskt"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
+msgid "True"
+msgstr "Sant"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:84
+msgid "Titles"
+msgstr "Titlar"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:94
+msgid "Own page"
+msgstr "Egen sida"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/pedigree_card.html:4
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:57
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:111
+msgid "Pedigree"
+msgstr "Stamtavla"
+
+#: ridgerunner_app/templates/ridgerunner_app/components/pedigree_card.html:9
+#, python-format
+msgid ""
+"%(first_name)s's pedigree in 3 generations. The inbreeding coefficient is "
+"%(inbreeding_coefficient)s %%. Note that only titles in dog sports (i.e., "
+"not show merits) are included. See SKK Hunddata or SKK Avelsdata for the "
+"complete version."
+msgstr ""
+"%(first_name)s stamtavla i 3 generationer. Inavelskoefficienten är "
+"%(inbreeding_coefficient)s %%. Notera att endast titlar i hundsport (dvs ej "
+"utställningsmeriter) är inkluderade. Se SKK Hunddata eller SKK Avelsdata för "
+"den kompletta versionen."
+
+#: ridgerunner_app/templates/ridgerunner_app/components/pedigree_card.html:13
+#, python-format
+msgid ""
+"%(first_name)s's pedigree in 3 generations. Note that only titles in dog "
+"sports (i.e., not show merits) are included. See SKK Hunddata or SKK "
+"Avelsdata for the complete version."
+msgstr ""
+"%(first_name)s stamtavla i 3 generationer. Notera att endast titlar i "
+"hundsport (dvs ej utställningsmeriter) är inkluderade. Se SKK Hunddata eller "
+"SKK Avelsdata för den kompletta versionen."
+
+#: ridgerunner_app/templates/ridgerunner_app/components/pedigree_card.html:19
+#, python-format
+msgid ""
+"The puppies' pedigree in 3 generations. The inbreeding coefficient is "
+"%(inbreeding_coefficient)s %%. Note that only titles in dog sports (i.e., "
+"not show merits) are included. See SKK Hunddata or SKK Avelsdata for the "
+"complete version."
+msgstr ""
+"Valparnas stamtavla i 3 generationer. Inavelskoefficienten är "
+"%(inbreeding_coefficient)s %%. Notera att endast titlar i hundsport (dvs ej "
+"utställningsmeriter) är inkluderade. Se SKK Hunddata eller SKK Avelsdata för "
+"den kompletta versionen."
+
+#: ridgerunner_app/templates/ridgerunner_app/components/pedigree_card.html:23
+msgid ""
+"The puppies' pedigree in 3 generations. Note that only titles in dog sports "
+"(i.e., not show merits) are included. See SKK Hunddata or SKK Avelsdata for "
+"the complete version."
+msgstr ""
+"Valparnas stamtavla i 3 generationer. Notera att endast titlar i hundsport "
+"(dvs ej utställningsmeriter) är inkluderade. Se SKK Hunddata eller SKK "
+"Avelsdata för den kompletta versionen."
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:27
+msgid "Contact form"
+msgstr "Kontaktformulär"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:34
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:31
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:34
+msgid "First name"
+msgstr "Tilltalsnamn"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:38
+msgid "Last name"
+msgstr "Efternamn"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:44
+msgid "Email address"
+msgstr "Mejladress"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:48
+msgid "Phone number (optional)"
+msgstr "Telefonnummer (frivilligt)"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:53
+msgid "Subject"
+msgstr "Ämne"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:57
+msgid "Message"
+msgstr "Meddelande"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:65
+msgid "Send"
+msgstr "Skicka"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:76
+msgid "Information"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:39
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:87
+msgid "Date of birth"
+msgstr "Födelsedatum"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:43
+msgid "Registration number"
+msgstr "Registreringsnummer"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:47
+msgid "Father"
+msgstr "Far"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:52
+msgid "Mother"
+msgstr "Mor"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:58
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:87
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:90
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:93
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:158
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:107
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:112
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:118
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:121
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:124
+msgid "See"
+msgstr "Se"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:58
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:87
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:90
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:93
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:158
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:107
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:112
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:118
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:121
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:124
+msgid "below"
+msgstr "nedan"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:69
+msgid "Hip joints & elbows"
+msgstr "Höftleder & armbågar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:77
+msgid "Genetic tests"
+msgstr "Gentester"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:85
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:190
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:116
+msgid "Mentality tests"
+msgstr "Mentaltester"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:87
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:198
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:118
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:160
+msgid "Mentality index"
+msgstr "Mentalindex"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:99
+msgid "Official titles"
+msgstr "Officiella titlar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:105
+msgid "Unofficial titles"
+msgstr "Inofficiella titlar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:121
+msgid "Awards"
+msgstr "Vandringspriser"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:137
+msgid "Competition results"
+msgstr "Tävlingsresultat"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:163
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:130
+msgid "Links"
+msgstr "Länkar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:175
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:142
+msgid "Presentation"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:180
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:150
+msgid "Mentality"
+msgstr "Mentalitet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:182
+msgid "In everyday life"
+msgstr "I vardagen"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:186
+msgid "In training & competition"
+msgstr "I träning & tävling"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:199
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:161
+msgid "Breeding Value"
+msgstr "Avelsvärde"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:200
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:162
+msgid "Confidence"
+msgstr "Säkerhet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:202
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:164
+msgid "Sociality"
+msgstr "Socialitet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:206
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:168
+msgid "Social Confidence"
+msgstr "Social trygghet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:210
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:172
+msgid "Playfulness"
+msgstr "Lekfullhet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:214
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:176
+msgid "Environmental Confidence"
+msgstr "Miljötrygghet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:218
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:180
+msgid "Aggressiveness"
+msgstr "Aggressivitet"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:230
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:254
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:192
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:200
+msgid "'S"
+msgstr "S"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:232
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:256
+#, python-format
+msgid "%(first_name)s 1 year old"
+msgid_plural "%(first_name)s %(age)s years old"
+msgstr[0] "%(first_name)s 1 år gammal"
+msgstr[1] "%(first_name)s %(age)s år gammal"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:237
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:261
+#, python-format
+msgid "(1 month and"
+msgid_plural "(%(age)s months and"
+msgstr[0] "(1 månad och"
+msgstr[1] "(%(age)s månader och"
+
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:242
+#: ridgerunner_app/templates/ridgerunner_app/dog.html:266
+#, python-format
+msgid "1 day)."
+msgid_plural "%(age)s days)."
+msgstr[0] "1 dag)."
+msgstr[1] "%(age)s dagar)."
+
+#: ridgerunner_app/templates/ridgerunner_app/dogs.html:18
+msgid "Our dogs"
+msgstr "Våra hundar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dogs.html:25
+msgid "Females"
+msgstr "Tikar"
+
+#: ridgerunner_app/templates/ridgerunner_app/dogs.html:45
+msgid "Males"
+msgstr "Hanar"
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:18
+#, python-format
+msgid "Litter %(letter)s"
+msgstr "%(letter)s-kullen"
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:91
+msgid "Inbreeding coefficient"
+msgstr "Inavelskoefficient"
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:96
+msgid "Number of puppies"
+msgstr "Antal valpar"
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:98
+#, python-format
+msgid "%(number_of_males)s males & %(number_of_females)s females"
+msgstr "%(number_of_males)s hanar & %(number_of_females)s tikar"
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:106
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:210
+msgid "Statistics"
+msgstr "Statistik"
+
+#: ridgerunner_app/templates/ridgerunner_app/news.html:41
+msgid "Congratulations"
+msgstr "Grattis"
+
+#: ridgerunner_app/templates/ridgerunner_app/news.html:60
+msgid "Congrats to owner"
+msgstr "Grattis till ägare"
+
+#: ridgerunner_app/views.py:122
+msgid "Your message was successfully sent! We'll get back to you shortly."
+msgstr ""
+
+#: ridgerunner_app/views.py:130
+msgid "Your reCAPTCHA response couldn't be verified."
+msgstr ""

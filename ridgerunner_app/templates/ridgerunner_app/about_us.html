@@ -1,0 +1,142 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/about_us.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+    </head>
+
+
+
+    <body>
+        {% translate "About us" as title %}
+        {% include "./components/header.html" with title=title %}
+
+
+
+        <main>
+            {% comment %}<div class="card image"><img src="{% static "ridgerunner_app/assets/images/Us.jpg" %}" alt=""></div>{% endcomment %}
+
+            <div class="card">
+                <section class="content">
+                    <p>{% translate "This page is under development." %}</p>
+                    {% comment %}<p>
+                        Kenneln drivs av mor och dotter, Marita och Mina Teräs.
+                        Vi bor i en villa i Gnesta, någon timme söder om Stockholm, tillsammans med våra 5 hundar (två rhodesian ridgebacks, två border collies och en vorsteh) som alla är tikar.
+                        Vi båda är aktiva inom Gnesta-Trosa Brukshundklubb (GTBK) och tränar/tävlar både i lydnad och bruks. I brukset brinner Marita för söket medan Mina satsar på rapporten. Marita har därutöver ett intresse för specialsök.
+                        Marita har haft hund, av en mängd olika raser, i över 40 år. Minas första hund är ridgebacken Heera, som vi hoppas ska bli mamma till kennelns första kull.
+                    </p>
+                    <p>
+                        Tanken om att starta en kennel kom med Heera, i takt med att hon växte upp och vi fick uppleva vilken snäll och trygg individ hon är.
+                        Inte blev vi mindre sugna när Heera började visa framfötterna ute på tävlingsbanorna och började samla på sig meriter inom hundsport.
+                        I och med att vi båda själva har hundsport som största intresse är det viktigt att våra hundar delar det intresset.
+                    </p>
+                    <p>
+                        Vårt mål är att föda upp friska och glada hundar.
+                        Kort och gott hundar som vill vara aktiva och som lämpar sig för hundsport.
+                        Som de flesta seriösa uppfödare strävar vi efter att avla fram hundar som är sociala, trygga och nyfikna.
+                        Det som särskiljer oss är att vi samtidigt kommer lägga stort engagemang och fokus på att ta fram lättbelönade hundar; lekfulla hundar med stor matdrift.
+                        Detta på grund av att en lättbelönad hund också är betydligt lättare att träna.
+                        Exteriört vill vi ta fram rastypiska hundar, men som är av en lättare och nättare - "sportigare" - typ.
+                        Inom hundsporten finns det inget att vinna för stora och kraftiga hundar.
+                        Ju tyngre hunden är, desto mer påfrestningar utsätts kroppen för.
+                        Flera grenar och moment kräver hög fart och explositivitet i form av snabba stopp och vändningar.
+                        För att en tung hund ska uppnå samma nivå som en lättare hund i de momenten måste den kämpa betydligt hårdare.
+                    </p>{% endcomment %}
+                </section>
+            </div>
+
+            <div class="sidebar">
+                <section>
+                    <h1>{% translate "Our requirements for breeding"|upper %}</h1>
+                    <p>
+                        Vi följer Svenska Kennelklubbens (SKK) och Specialklubben Rhodesian Ridgeback Sverige (SRRS) krav samt rekommendationer när det kommer till avel.
+                        Därutöver har vi ett par egna krav.
+                    </p>
+                    <ul>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden ska vara frisk.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden ska vara röntgad på höfter (HD) och armbågar (ED) med HD grad A, B eller C och ED 0. Läs SRRS regler kring användandet av HD grad C <a href="http://www.srrs.org/srrs/avel/tjanster/valphanvisning" target="_blank">här</a>.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden ska vara över 30 månaders ålder vid parning.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden, om svenskägd, ska ha mentalbeskrivits (BPH och/eller MH) med ett, enligt oss, önskvärt resultat som vi anser lämpar sig för hundsport.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden ska tränas (och gärna tävlas) aktivt inom någon hundsport. Våra egna tikar måste även vara meriterade genom tävling.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Hunden ska vara av sportig modell. Rasstandarden rekommenderar en vikt på ca 36,5 kg för hanar och ca 32 kg för tikar.</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>{% translate "What you get when you buy a puppy from us"|upper %}</h1>
+                    <p>När valparna levereras är de avmaskade, vaccinerade och ID-märkta. Med valpen medföljer också...</p>
+                    <ul>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>En stamtavla från SKK.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Ett köpeavtal från SKK.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Ett besiktningsintyg från veterinär som inte är äldre än 7 dagar.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Försäkring för dolda fel som gäller i 3 år hos Folksam.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Ett års medlemskap i Specialklubben Rhodesian Ridgeback Sverige (SRRS).</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Ett löfte om att du som valpköpare alltid är välkommen att kontakta oss med frågor och funderingar.</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>{% translate "Our expectations on you as a puppy buyer"|upper %}</h1>
+                    <ul>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Att du vill och har möjlighet att lägga tid på din hund och aktivera den i någon form. Du behöver inte vara intresserad av att tävla, men med tanke på våra avelsmål uppskattar vi såklart om tävlingsambitioner finns!</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Att du låter röntga hundens höfter (HD) och armbågar (ED) när den är mellan 12-18 månader gammal.</p>
+                        </li>
+                        <li>
+                            <div class="bullet"></div>
+                            <p>Att du deltar med hunden i den mentalbeskrivning (BPH) som vi anordnar för kullen.</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>

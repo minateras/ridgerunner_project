@@ -1,0 +1,297 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% get_current_language as language_code %}
+        {% load filters %}
+        <link rel="stylesheet" href="{% static "ridgerunner_app/css/dog.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% url "javascript_catalog" %}"></script>
+        <script src="{% static "ridgerunner_app/js/dog.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        {% url "dogs" as url_of_previous_page %}
+        {% translate "Dogs" as title_of_previous_page %}
+        {% include "./components/header.html" with url_of_previous_page=url_of_previous_page title_of_previous_page=title_of_previous_page title=dog.dog.first_name %}
+
+
+
+        <main>
+            <div class="card image"><img alt="{{ dog.dog.first_name }}" src="{% static dog.dog.image %}"></div>
+
+            <div class="sidebar">
+                <section>
+                    <h1>{% translate "First name"|upper %}</h1>
+                    <p>{{ dog.dog.first_name }}</p>
+                </section>
+                <section>
+                    <h1>{% translate "Kennel name"|upper %}</h1>
+                    <p>{{ dog.dog.kennel_name }}</p>
+                </section>
+                <section>
+                    <h1>{% translate "Date of birth"|upper %}</h1>
+                    <p>{{dog.dog.date_of_birth|format_date}}</p>
+                </section>
+                <section>
+                    <h1>{% translate "Registration number"|upper %}</h1>
+                    <p>{{ dog.dog.registration_number }}</p>
+                </section>
+                <section>
+                    <h1>{% translate "Father"|upper %}</h1>
+                    <p>{{ dog.dog.father.country_of_origin|get_flag_emoji }} {{ dog.dog.father.kennel_name }}</p>
+                    <q>{{ dog.dog.father.first_name }}</q>
+                </section>
+                <section>
+                    <h1>{% translate "Mother"|upper %}</h1>
+                    <p>{{ dog.dog.mother.country_of_origin|get_flag_emoji }} {{ dog.dog.mother.kennel_name }}</p>
+                    <q>{{ dog.dog.mother.first_name }}</q>
+                </section>
+                <section>
+                    <h1>{% translate "Pedigree"|upper %}</h1>
+                    <p>{% translate "See" %} <a href="#pedigree">{% translate "below" %}</a>.</p>
+                </section>
+                <section>
+                    <h1>{% translate "Height"|upper %}</h1>
+                    <p>{{ dog.dog.height }} cm</p>
+                </section>
+                <section>
+                    <h1>{% translate "Weight"|upper %}</h1>
+                    <p>{{ dog.dog.weight }} kg</p>
+                </section>
+                <section>
+                    <h1>{% translate "Hip joints & elbows"|upper %}</h1>
+                    {% if dog.dog.hip_joints != None and dog.dog.elbows != None %}
+                        <p>{{ dog.dog.hip_joints|format_hip_joints:language_code }} & {{ dog.dog.elbows|format_elbows:language_code }}</p>
+                    {% else %}
+                        <p>TBA</p>
+                    {% endif %}
+                </section>
+                <section>
+                    <h1>{% translate "Genetic tests"|upper %}</h1>
+                    <p>DM: {{ dog.dog.degenerative_myelopathy|tba }}</p>
+                    <p>EOAD: {{ dog.dog.early_onset_adult_deafness|tba }}</p>
+                    <p>JME: {{ dog.dog.juvenile_myoclonic_epilepsy|tba }}</p>
+                    <p>Ridge: {{ dog.dog.ridge|tba }}</p>
+                </section>
+                {% if dog.dog.mentality_index != None or dog.dog.mh != None or dog.dog.bph != None %}
+                <section>
+                    <h1>{% translate "Mentality tests"|upper %}</h1>
+                    {% if dog.dog.mentality_index != None %}
+                    <p>{% translate "Mentality index"|upper %}: {% translate "See" %} <a href="#mentality_index">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                    {% if dog.dog.mh != None %}
+                    <p>MH: {% translate "See" %} <a href="#mh">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                    {% if dog.dog.bph != None %}
+                    <p>BPH: {% translate "See" %} <a href="#bph">{% translate "below" %}</a>.</p>
+                    {% endif %}
+                </section>
+                {% endif %}
+                {% if dog.dog.official_titles|length > 0 %}
+                    <section>
+                        <h1>{% translate "Official titles"|upper %}</h1>
+                        <p>{{ dog.dog.official_titles|format_list }}</p>
+                    </section>
+                {% endif %}
+                {% if unofficial_titles|length > 0 %}
+                    <section>
+                        <h1>{% translate "Unofficial titles"|upper %}</h1>
+                        {% for unofficial_title in unofficial_titles %}
+                            <h2>{{ unofficial_title.1.name }}</h2>
+                            <ul>
+                                {% for title in unofficial_title.0.unofficial_titles %}
+                                    <li>
+                                        <div class="bullet"></div>
+                                        <p>{{ title }}</p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </section>
+                {% endif %}
+                {% if awards|length > 0 %}
+                    <section>
+                        <h1>{% translate "Awards"|upper %}</h1>
+                        {% for award in awards %}
+                            <h2>{{ award.1.name }}</h2>
+                            <ul>
+                                {% for prize in award.0.awards %}
+                                    <li>
+                                        <div class="bullet"></div>
+                                        <p>{{ prize }}</p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </section>
+                {% endif %}
+                {% if competition_results|length > 0 %}
+                    <section>
+                        <h1>{% translate "Competition results"|upper %}</h1> <!-- Tävlingsmeriter. -->
+                        {% for competition_result in competition_results %}
+                            {% if competition_result.2.name != None %}
+                                <h2>{{ competition_result.1.name }}, {{ competition_result.2.name }}</h2>
+                            {% else %}
+                                <h2>{{ competition_result.1.name }}</h2>
+                            {% endif %}
+                            <ul>
+                                {% for result in competition_result.0.results %}
+                                    <li>
+                                        <div class="bullet"></div>
+                                        <p>{{ result }}</p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+                    </section>
+                {% endif %}
+                {% if litters|length > 0 %}
+                <section>
+                    <h1>{% translate "Litters"|upper %}</h1>
+                    <p>{% translate "See" %} <a href="#litters">{% translate "below" %}</a>.</p>
+                </section>
+                {% endif %}
+                {% if links|length > 0 %}
+                    <section>
+                        <h1>{% translate "Links"|upper %}</h1>
+                        <section class="links">
+                            {% for link in links %}
+                                <a class="button" href="{{ link.link.url }}" target="_blank">{{ link.name }}</a>
+                            {% endfor %}
+                        </section>
+                    </section>
+                {% endif %}
+            </div>
+
+            <section>
+                <div class="card">
+                    <section class="heading"><h1>{% translate "Presentation"|upper %}</h1></section>
+                    <section class="content">{{ dog.presentation|safe|escape }}</section>
+                </div>
+
+                <div class="card">
+                    <section class="heading"><h1>{% translate "Mentality"|upper %}</h1></section>
+                    <section class="content">
+                        <h2>{% translate "In everyday life"|upper %}</h2>
+                        {{ dog.mentality.0|safe|escape }}
+                    </section>
+                    <section class="content">
+                        <h2>{% translate "In training & competition"|upper %}</h2>
+                        {{ dog.mentality.1|safe|escape }}
+                    </section>
+                    <section class="content">
+                        <h2>{% translate "Mentality tests"|upper %}</h2>
+                        {{ dog.mentality.2|safe|escape }}
+                    </section>
+                </div>
+
+                {% if dog.dog.mentality_index != None %}
+                    <div class="card column" id="mentality_index">
+                        <div class="mentality-index">
+                            <div class="table-heading left" style="border-top-left-radius: var(--border-radius); font-weight: 600;">{% translate "Mentality index"|upper %}</div>
+                            <div class="table-heading">{% translate "Breeding Value" %}</div>
+                            <div class="table-heading right" style="border-top-right-radius: var(--border-radius);">{% translate "Confidence" %}</div>
+
+                            <div class="table-heading left">{% translate "Sociality" %}</div>
+                            <div>{{ dog.dog.mentality_index.0.0 }}</div>
+                            <div class="right">{{ dog.dog.mentality_index.0.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Social Confidence" %}</div>
+                            <div>{{ dog.dog.mentality_index.1.0 }}</div>
+                            <div class="right">{{ dog.dog.mentality_index.1.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Playfulness" %}</div>
+                            <div>{{ dog.dog.mentality_index.2.0 }}</div>
+                            <div class="right">{{ dog.dog.mentality_index.2.1 }}</div>
+
+                            <div class="table-heading left">{% translate "Environmental Confidence" %}</div>
+                            <div>{{ dog.dog.mentality_index.3.0 }}</div>
+                            <div class="right">{{ dog.dog.mentality_index.3.1 }}</div>
+
+                            <div class="table-heading left" style="border-bottom-left-radius: var(--border-radius);">{% translate "Aggressiveness" %}</div>
+                            <div>{{ dog.dog.mentality_index.4.0 }}</div>
+                            <div class="right">{{ dog.dog.mentality_index.4.1 }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if dog.dog.mh != None or dog.dog.bph != None %}
+                    <div class="card column">
+                        {% if dog.dog.mh != None %}
+                            <img alt="MH" class="inspect" id="mh" src="{% static dog.dog.mh %}">
+                            <dialog>
+                                <h1>{{ dog.dog.first_name|upper }}{% translate "'S" %} MH</h1>
+                                <p>
+                                    {% blocktranslate trimmed count counter=dog.dog.mh_age.0 with first_name=dog.dog.first_name age=dog.dog.mh_age.0|floatformat %}
+                                    {{ first_name }} 1 year old
+                                    {% plural %}
+                                    {{ first_name }} {{ age }} years old
+                                    {% endblocktranslate %}
+                                    {% blocktranslate trimmed count counter=dog.dog.mh_age.1 with age=dog.dog.mh_age.1|floatformat %}
+                                    (1 month and
+                                    {% plural %}
+                                    ({{ age }} months and
+                                    {% endblocktranslate %}
+                                    {% blocktranslate trimmed count counter=dog.dog.mh_age.2 with age=dog.dog.mh_age.2|floatformat %}
+                                    1 day).
+                                    {% plural %}
+                                    {{ age }} days).
+                                    {% endblocktranslate %}
+                                </p>
+                                <img alt="MH" src="{% static dog.dog.mh|with_explanations %}">
+                            </dialog>
+                        {% endif %}
+                        {% if dog.dog.bph != None %}
+                            <img alt="BPH" class="inspect" id="bph" src="{% static dog.dog.bph %}">
+                            <dialog>
+                                <h1>{{ dog.dog.first_name|upper }}{% translate "'S" %} BPH</h1>
+                                <p>
+                                    {% blocktranslate trimmed count counter=dog.dog.bph_age.0 with first_name=dog.dog.first_name age=dog.dog.bph_age.0|floatformat %}
+                                    {{ first_name }} 1 year old
+                                    {% plural %}
+                                    {{ first_name }} {{ age }} years old
+                                    {% endblocktranslate %}
+                                    {% blocktranslate trimmed count counter=dog.dog.bph_age.1 with age=dog.dog.bph_age.1|floatformat %}
+                                    (1 month and
+                                    {% plural %}
+                                    ({{ age }} months and
+                                    {% endblocktranslate %}
+                                    {% blocktranslate trimmed count counter=dog.dog.bph_age.2 with age=dog.dog.bph_age.2|floatformat %}
+                                    1 day).
+                                    {% plural %}
+                                    {{ age }} days).
+                                    {% endblocktranslate %}
+                                </p>
+                                <img alt="BPH" src="{% static dog.dog.bph|with_explanations %}">
+                            </dialog>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                {% if litters|length > 0 %}
+                    <div class="card column" id="litters">
+                        <section class="heading"><h1>{% translate "Litters"|upper %}</h1></section>
+                        {% for litter in litters %}
+                            {% include "./components/litter_card.html" with litter=litter offspring=litter.litter.offspring.all %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% include "./components/pedigree_card.html" with father=dog.dog.father mother=dog.dog.mother first_name=dog.dog.first_name inbreeding_coefficient=dog.dog.inbreeding_coefficient %}
+
+                {% comment %}TODO Gallery: pictures of parents and dog.{% endcomment %}
+            </section>
+        </main>
+
+
+
+        {% include "./components/footer.html" %}
+    </body>
+</html>
