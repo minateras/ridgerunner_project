@@ -1,6 +1,5 @@
 import os
 import dotenv
-import threading
 import requests
 from django.core.mail import send_mail
 from django.shortcuts import render
@@ -120,13 +119,12 @@ def contact_us(request):
             if success:
                 status = 201
                 context['success_message'] = gettext('Your message was successfully sent! We\'ll get back to you shortly.')
-                # Send email asynchronously:
-                threading.Thread(target=send_mail, args=(
+                send_mail(
                     contact_form.data['subject'],
                     f"FROM...\nFirst name: {contact_form.data['first_name']}\nLast name: {contact_form.data['last_name']}\nEmail: {contact_form.data['email']}\nTel: {contact_form.data['tel'] if len(contact_form.data['tel']) > 0 else '...'}\n\n{contact_form.data['message']}",
                     os.getenv('EMAIL_HOST_USER'),
                     (os.getenv('EMAIL_HOST_USER'), ),
-                )).start()
+                )
             else: context['recaptcha_error_message'] = gettext('Your reCAPTCHA response couldn\'t be verified.')
         if status != 201:
             status = 400
