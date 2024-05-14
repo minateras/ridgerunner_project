@@ -2,16 +2,16 @@
 <header>
     <div class="logotype-navigation">
         <section class="logotype">
-            <a href="{% url "news" %}" style="display: none;">MW</a>
-            <a href="{% url "news" %}">KENNEL MESSENGER DOG</a> <!-- RIDGERUNNER -->
+            <a href="{% url "news" %}" style="display: none;">MW</a> {% comment %}TODO: Add logotype.{% endcomment %}
+            <a href="{% url "news" %}">KENNEL MESSENGER DOG</a>
         </section>
         <nav>
-            <a href="{% url "news" %}">{% translate "News"|upper %}</a>
-            <a href="{% url "dogs" %}">{% translate "Dogs"|upper %}</a>
-            <a href="{% url "puppies" %}">{% translate "Puppies"|upper %}</a>
-            <a href="{% url "litters" %}">{% translate "Litters"|upper %}</a>
-            <a href="{% url "about_us" %}">{% translate "About us"|upper %}</a>
-            <a href="{% url "contact_us" %}">{% translate "Contact us"|upper %}</a>
+            <a class="{% if request.path == "/ridgerunner_app/" %}current{% endif %}" href="{% url "news" %}">{% translate "News"|upper %}</a>
+            <a class="{% if "/ridgerunner_app/dogs/" in request.path %}current{% endif %}" href="{% url "dogs" %}">{% translate "Dogs"|upper %}</a>
+            <a class="{% if request.path == "/ridgerunner_app/puppies/" %}current{% endif %}" href="{% url "puppies" %}">{% translate "Puppies"|upper %}</a>
+            <a class="{% if "/ridgerunner_app/litters/" in request.path %}current{% endif %}" href="{% url "litters" %}">{% translate "Litters"|upper %}</a>
+            <a class="{% if request.path == "/ridgerunner_app/about_us/" %}current{% endif %}" href="{% url "about_us" %}">{% translate "About us"|upper %}</a>
+            <a class="{% if request.path == "/ridgerunner_app/contact_us/" %}current{% endif %}" href="{% url "contact_us" %}">{% translate "Contact us"|upper %}</a>
         </nav>
     </div>
     <div class="title">

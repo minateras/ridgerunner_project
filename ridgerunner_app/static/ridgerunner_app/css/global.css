@@ -146,8 +146,10 @@ header > .logotype-navigation > * > a {
   text-decoration: unset;
 }
 header > .logotype-navigation > * > a:hover {
-  color: var(--c-green-medium);
   transition: color var(--t-short);
+}
+header > .logotype-navigation > * > .current, header > .logotype-navigation > * > a:hover {
+  color: var(--c-green-medium);
 }
 header > .logotype-navigation > .logotype {
   column-gap: var(--g-big);

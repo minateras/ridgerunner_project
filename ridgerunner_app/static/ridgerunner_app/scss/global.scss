@@ -163,9 +163,12 @@ header {
                 text-decoration: unset;
 
                 &:hover {
-                    color: var(--c-green-medium);
                     transition: color var(--t-short);
                 }
+            }
+
+            > .current, > a:hover {
+                color: var(--c-green-medium);
             }
         }
 
