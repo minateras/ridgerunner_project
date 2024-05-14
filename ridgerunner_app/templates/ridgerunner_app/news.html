@@ -57,7 +57,9 @@
                                 </li>
                             {% endfor %}
                         </ul>
-                        <p>{% translate "Congrats to owner" %} {% if congrats.congratulations.dog != null %}{{ congrats.congratulations.dog.owner|format_list }}{% else %}{{ congrats.congratulations.owner|format_list }}{% endif %}!</p>
+                        {% if congrats.congratulations.dog == null or congrats.congratulations.dog.owner.0 != "Mina Teräs" %}
+                            <p>{% translate "Congrats to owner" %} {% if congrats.congratulations.dog != null %}{{ congrats.congratulations.dog.owner|format_list }}{% else %}{{ congrats.congratulations.owner|format_list }}{% endif %}!</p>
+                        {% endif %}
                     </section>
                 {% endfor %}
             </div>
