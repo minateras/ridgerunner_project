@@ -6,7 +6,7 @@
             <a href="{% url "news" %}">KENNEL MESSENGER DOG</a>
         </section>
         <nav>
-            <a class="{% if request.path == "/ridgerunner_app/" %}current{% endif %}" href="{% url "news" %}">{% translate "News"|upper %}</a>
+            <a class="{% if request.path == "/" or request.path == "/ridgerunner_app/" %}current{% endif %}" href="{% url "news" %}">{% translate "News"|upper %}</a>
             <a class="{% if "/ridgerunner_app/dogs/" in request.path %}current{% endif %}" href="{% url "dogs" %}">{% translate "Dogs"|upper %}</a>
             <a class="{% if request.path == "/ridgerunner_app/puppies/" %}current{% endif %}" href="{% url "puppies" %}">{% translate "Puppies"|upper %}</a>
             <a class="{% if "/ridgerunner_app/litters/" in request.path %}current{% endif %}" href="{% url "litters" %}">{% translate "Litters"|upper %}</a>
