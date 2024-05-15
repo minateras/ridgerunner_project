@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 13:51+0200\n"
+"POT-Creation-Date: 2024-05-16 00:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ridgerunner_project/settings.py:87
+#: ridgerunner_project/settings.py:91
 msgid "English"
 msgstr ""
 
-#: ridgerunner_project/settings.py:88
+#: ridgerunner_project/settings.py:92
 msgid "Swedish"
 msgstr ""
 
@@ -50,12 +50,109 @@ msgstr ""
 msgid "Our requirements for breeding"
 msgstr ""
 
-#: ridgerunner_app/templates/ridgerunner_app/about_us.html:91
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:59
+msgid ""
+"We follow the requirements and recommendations of the Swedish Kennel Club "
+"(SKK) and the Swedish Rhodesian Ridgeback Club (SRRS) when it comes to "
+"breeding. In addition, we've a couple of our own requirements."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:63
+msgid "The dog must be healthy."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:67
+msgid ""
+"The dog must have x-rayed hips (HD) and elbows (ED) with HD A, B, or C and "
+"ED 0. Read the breed club's rules regarding the use of HD C"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:67
+msgid "here"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:71
+msgid "The dog must be at least 30 months old at the time of mating."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:75
+msgid ""
+"The dog, if Swedish-owned, must be mentally tested (BPH and/or MH) with a, "
+"in our opinion, desirable result that we consider to be suitable for dog "
+"sports."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:79
+msgid ""
+"The dog must be trained (and preferably compete) actively in some dog sport. "
+"Our own females must also have competition merits."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:83
+msgid ""
+"The dog must be of a sporty build. The breed standard recommends a weight of "
+"around 36,5 kg for males and 32 kg for females."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:88
 msgid "What you get when you buy a puppy from us"
 msgstr ""
 
-#: ridgerunner_app/templates/ridgerunner_app/about_us.html:121
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:89
+msgid ""
+"When the puppies are delivered, they are dewormed, vaccinated and ID marked. "
+"Along with the puppy you also get..."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:93
+msgid "A pedigree from SKK."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:97
+msgid "A purchase agreement from SKK."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:101
+msgid ""
+"An inspection certificate from a veterinarian that is no older than 7 days."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:105
+msgid "Insurance for latent defects valid for 3 years at Folksam."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:109
+msgid ""
+"A membership in the Swedish Rhodesian Ridgeback Club (SRRS) valid for 1 year."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:113
+msgid ""
+"A promise that you as a puppy buyer are always welcome to contact us with "
+"questions and concerns."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:118
 msgid "Our expectations on you as a puppy buyer"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:122
+msgid ""
+"That you'll spend time with your dog and mentally stimulate it in some form. "
+"You don't have to be interested in competing, but considering our breeding "
+"goals, we of course appreciate if you have competition ambitions!"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:126
+msgid ""
+"That you'll x-ray your dog's hips (HD) and elbows (ED) when it's between "
+"12-18 months old."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:130
+msgid ""
+"That you participate with the dog in the mental test (BPH) that we organize "
+"for the litter."
 msgstr ""
 
 #: ridgerunner_app/templates/ridgerunner_app/components/footer.html:4
@@ -290,6 +387,30 @@ msgstr ""
 
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:76
 msgid "Information"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:77
+msgid ""
+"To minimize the risk of spam emails, we use a contact form. In order for us "
+"to be able to reply, you must enter your email address, but you can also "
+"enter your phone number if you wish to talk over the phone."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:78
+msgid ""
+"You're welcome to contact us if you've any questions, want to meet us and "
+"our dogs, or if you want to sign up on our waiting list and register your "
+"interest in a puppy."
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid ""
+"We welcome tips on males available for breeding. Read our breeding goals "
+"under"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid "and you'll get an idea of what we're looking for."
 msgstr ""
 
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:39

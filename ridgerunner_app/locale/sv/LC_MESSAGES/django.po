@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 13:51+0200\n"
+"POT-Creation-Date: 2024-05-16 00:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ridgerunner_project/settings.py:87
+#: ridgerunner_project/settings.py:91
 msgid "English"
 msgstr ""
 
-#: ridgerunner_project/settings.py:88
+#: ridgerunner_project/settings.py:92
 msgid "Swedish"
 msgstr ""
 
@@ -50,13 +50,126 @@ msgstr "Denna sida är under uppbyggnad."
 msgid "Our requirements for breeding"
 msgstr "Våra avelskrav"
 
-#: ridgerunner_app/templates/ridgerunner_app/about_us.html:91
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:59
+msgid ""
+"We follow the requirements and recommendations of the Swedish Kennel Club "
+"(SKK) and the Swedish Rhodesian Ridgeback Club (SRRS) when it comes to "
+"breeding. In addition, we've a couple of our own requirements."
+msgstr ""
+"Vi följer Svenska Kennelklubbens (SKK) och Specialklubben Rhodesian "
+"Ridgeback Sverige (SRRS) krav samt rekommendationer när det kommer till "
+"avel. Därutöver har vi ett par egna krav."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:63
+msgid "The dog must be healthy."
+msgstr "Hunden måste vara frisk."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:67
+msgid ""
+"The dog must have x-rayed hips (HD) and elbows (ED) with HD A, B, or C and "
+"ED 0. Read the breed club's rules regarding the use of HD C"
+msgstr ""
+"Hunden måste vara röntgad på höfter (HD) och armbågar (ED) med HD grad A, B "
+"eller C och ED 0. Läs rasklubbens regler kring användandet av HD grad C"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:67
+msgid "here"
+msgstr "här"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:71
+msgid "The dog must be at least 30 months old at the time of mating."
+msgstr "Hunden måste vara minst 30 månader gammal vid parning."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:75
+msgid ""
+"The dog, if Swedish-owned, must be mentally tested (BPH and/or MH) with a, "
+"in our opinion, desirable result that we consider to be suitable for dog "
+"sports."
+msgstr ""
+"Hunden, om svenskägd, måste vara mentaltestad (BPH och/eller MH) med ett, "
+"enligt oss, önskvärt resultat som vi anser lämpar sig för hundsport."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:79
+msgid ""
+"The dog must be trained (and preferably compete) actively in some dog sport. "
+"Our own females must also have competition merits."
+msgstr ""
+"Hunden måste tränas (och gärna tävlas) aktivt inom någon hundsport. Våra "
+"egna tikar måste även vara meriterade genom tävling."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:83
+msgid ""
+"The dog must be of a sporty build. The breed standard recommends a weight of "
+"around 36,5 kg for males and 32 kg for females."
+msgstr ""
+"Hunden ska vara av sportig modell. Rasstandarden rekommenderar en vikt på ca "
+"36,5 kg för hanar och ca 32 kg för tikar."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:88
 msgid "What you get when you buy a puppy from us"
 msgstr "Vad du får när du köper en valp från oss"
 
-#: ridgerunner_app/templates/ridgerunner_app/about_us.html:121
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:89
+msgid ""
+"When the puppies are delivered, they are dewormed, vaccinated and ID marked. "
+"Along with the puppy you also get..."
+msgstr ""
+"När valparna levereras är de avmaskade, vaccinerade och ID-märkta. Med "
+"valpen medföljer också..."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:93
+msgid "A pedigree from SKK."
+msgstr "En stamtavla från SKK."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:97
+msgid "A purchase agreement from SKK."
+msgstr "Ett köpeavtal från SKK."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:101
+msgid ""
+"An inspection certificate from a veterinarian that is no older than 7 days."
+msgstr "Ett besiktningsintyg från veterinär som inte är äldre än 7 dagar."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:105
+msgid "Insurance for latent defects valid for 3 years at Folksam."
+msgstr "Försäkring för dolda fel som gäller i 3 år hos Folksam."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:109
+msgid ""
+"A membership in the Swedish Rhodesian Ridgeback Club (SRRS) valid for 1 year."
+msgstr ""
+"Ett års medlemskap i Specialklubben Rhodesian Ridgeback Sverige (SRRS)."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:113
+msgid ""
+"A promise that you as a puppy buyer are always welcome to contact us with "
+"questions and concerns."
+msgstr ""
+"Ett löfte om att du som valpköpare alltid är välkommen att kontakta oss med "
+"frågor och funderingar."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:118
 msgid "Our expectations on you as a puppy buyer"
 msgstr "Våra förväntningar på dig som valpköpare"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:122
+msgid ""
+"That you'll spend time with your dog and mentally stimulate it in some form. "
+"You don't have to be interested in competing, but considering our breeding "
+"goals, we of course appreciate if you have competition ambitions!"
+msgstr "Att du vill och har möjlighet att lägga tid på din hund och aktivera den i någon form. Du behöver inte vara intresserad av att tävla, men med tanke på våra avelsmål uppskattar vi såklart om tävlingsambitioner finns!"
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:126
+msgid ""
+"That you'll x-ray your dog's hips (HD) and elbows (ED) when it's between "
+"12-18 months old."
+msgstr "Att du låter röntga hundens höfter (HD) och armbågar (ED) när den är mellan 12-18 månader gammal."
+
+#: ridgerunner_app/templates/ridgerunner_app/about_us.html:130
+msgid ""
+"That you participate with the dog in the mental test (BPH) that we organize "
+"for the litter."
+msgstr "Att du deltar med hunden i det mentaltest (BPH) som vi anordnar för kullen."
 
 #: ridgerunner_app/templates/ridgerunner_app/components/footer.html:4
 msgid "Follow me and the pack on Instagram"
@@ -306,6 +419,38 @@ msgstr "Skicka"
 msgid "Information"
 msgstr ""
 
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:77
+msgid ""
+"To minimize the risk of spam emails, we use a contact form. In order for us "
+"to be able to reply, you must enter your email address, but you can also "
+"enter your phone number if you wish to talk over the phone."
+msgstr ""
+"För att minimera risken för spammejl använder vi ett kontaktformulär. För "
+"att vi ska kunna svara dig måste du ange din mejladress, men du kan också "
+"ange ditt telefonnummer om du önskar höras på telefon."
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:78
+msgid ""
+"You're welcome to contact us if you've any questions, want to meet us and "
+"our dogs, or if you want to sign up on our waiting list and register your "
+"interest in a puppy."
+msgstr ""
+"Du är välkommen att kontakta oss om du har någon fundering, vill träffa oss "
+"och våra hundar eller om du vill skriva upp dig på vår väntelista och anmäla "
+"ditt intresse för en valp."
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid ""
+"We welcome tips on males available for breeding. Read our breeding goals "
+"under"
+msgstr ""
+"Vi tar gärna emot tips på hanhundar tillgängliga för avel. Läs igenom våra "
+"avelsmål under"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid "and you'll get an idea of what we're looking for."
+msgstr "så får du en idé vad vi letar efter."
+
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:39
 #: ridgerunner_app/templates/ridgerunner_app/litter.html:87
 msgid "Date of birth"
@@ -520,11 +665,11 @@ msgstr "Grattis till ägare"
 
 #: ridgerunner_app/views.py:121
 msgid "Your message was successfully sent! We'll get back to you shortly."
-msgstr ""
+msgstr "Ditt meddelande skickades! Vi återkommer till dig inom kort."
 
 #: ridgerunner_app/views.py:128
 msgid "Your reCAPTCHA response couldn't be verified."
-msgstr ""
+msgstr "Ditt reCAPTCHA-svar kunde inte verifieras."
 
 msgid "Multi-crown"
 msgstr "Multikrona"
