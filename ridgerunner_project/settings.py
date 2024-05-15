@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False # Don't run with debug turned on in production!
+ADMIN_ENABLED = DEBUG
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
