@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-14 12:51+0200\n"
+"POT-Creation-Date: 2024-05-15 13:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ridgerunner_project/settings.py:86
+#: ridgerunner_project/settings.py:87
 msgid "English"
 msgstr ""
 
-#: ridgerunner_project/settings.py:87
+#: ridgerunner_project/settings.py:88
 msgid "Swedish"
 msgstr ""
 
@@ -37,7 +37,7 @@ msgid "Please use the following format: {regex}"
 msgstr "Använd följande format: {regex}"
 
 #: ridgerunner_app/templates/ridgerunner_app/about_us.html:17
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:13
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:14
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
 msgid "About us"
 msgstr "Om oss"
@@ -62,29 +62,29 @@ msgstr "Våra förväntningar på dig som valpköpare"
 msgid "Follow me and the pack on Instagram"
 msgstr "Följ mig och flocken på Instagram"
 
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:9
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:10
 #: ridgerunner_app/templates/ridgerunner_app/news.html:19
 msgid "News"
 msgstr "Nyheter"
 
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:10
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:11
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:21
 msgid "Dogs"
 msgstr "Hundar"
 
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:11
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:12
 #: ridgerunner_app/templates/ridgerunner_app/litter.html:18
 msgid "Puppies"
 msgstr "Valpar"
 
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:12
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:13
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:157
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:280
 #: ridgerunner_app/templates/ridgerunner_app/litters.html:18
 msgid "Litters"
 msgstr "Kullar"
 
-#: ridgerunner_app/templates/ridgerunner_app/components/header.html:14
+#: ridgerunner_app/templates/ridgerunner_app/components/header.html:15
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:20
 msgid "Contact us"
 msgstr "Kontakta oss"
@@ -148,6 +148,15 @@ msgstr ""
 msgid "Correct ridge"
 msgstr "Korrekt ridge"
 
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:26
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:31
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:36
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:41
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:46
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
+msgid "True"
+msgstr "Sant"
+
 #: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:29
 msgid "Correct tail"
 msgstr "Korrekt svans"
@@ -159,6 +168,12 @@ msgstr "Saxbett"
 #: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:39
 msgid "Dermoid sinus"
 msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:41
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:46
+#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
+msgid "False"
+msgstr "Falskt"
 
 #: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:44
 msgid "Cryptorchid"
@@ -191,14 +206,6 @@ msgstr ""
 #: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:79
 msgid "Mentality tested"
 msgstr "Mentaltestad"
-
-#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
-msgid "False"
-msgstr "Falskt"
-
-#: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:81
-msgid "True"
-msgstr "Sant"
 
 #: ridgerunner_app/templates/ridgerunner_app/components/litter_statistics.html:84
 msgid "Titles"
@@ -507,14 +514,23 @@ msgstr "Statistik"
 msgid "Congratulations"
 msgstr "Grattis"
 
-#: ridgerunner_app/templates/ridgerunner_app/news.html:60
+#: ridgerunner_app/templates/ridgerunner_app/news.html:61
 msgid "Congrats to owner"
 msgstr "Grattis till ägare"
 
-#: ridgerunner_app/views.py:122
+#: ridgerunner_app/views.py:121
 msgid "Your message was successfully sent! We'll get back to you shortly."
 msgstr ""
 
-#: ridgerunner_app/views.py:130
+#: ridgerunner_app/views.py:128
 msgid "Your reCAPTCHA response couldn't be verified."
 msgstr ""
+
+msgid "Multi-crown"
+msgstr "Multikrona"
+
+msgid "Single-crown"
+msgstr "Enkrona"
+
+msgid "Overbite"
+msgstr "Överbett"

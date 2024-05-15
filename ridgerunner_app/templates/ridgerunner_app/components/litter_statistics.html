@@ -23,27 +23,27 @@
 
     <div class="table-heading left">{% translate "Correct ridge"|upper %}</div>
     {% for puppy in offspring %}
-        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_ridge %}{{ puppy.correct_ridge }}{% else %}{{ puppy.correct_ridge_comment }}{% endif %}</div>
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_ridge %}{% translate "True" %}{% else %}{% translate puppy.correct_ridge_comment %}{% endif %}</div>
     {% endfor %}
 
     <div class="table-heading left">{% translate "Correct tail"|upper %}</div>
     {% for puppy in offspring %}
-        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_tail %}{{ puppy.correct_tail }}{% else %}{{ puppy.correct_tail_comment }}{% endif %}</div>
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.correct_tail %}{% translate "True" %}{% else %}{% translate puppy.correct_tail_comment %}{% endif %}</div>
     {% endfor %}
 
     <div class="table-heading left">{% translate "Scissor bite"|upper %}</div>
     {% for puppy in offspring %}
-        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.scissor_bite %}{{ puppy.scissor_bite }}{% else %}{{ puppy.scissor_bite_comment }}{% endif %}</div>
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.scissor_bite %}{% translate "True" %}{% else %}{% translate puppy.scissor_bite_comment %}{% endif %}</div>
     {% endfor %}
 
     <div class="table-heading left">{% translate "Dermoid sinus"|upper %}</div>
     {% for puppy in offspring %}
-        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.dermoid_sinus }}</div>
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.dermoid_sinus %}{% translate "True" %}{% else %}{% translate "False" %}{% endif %}</div>
     {% endfor %}
 
     <div class="table-heading left">{% translate "Cryptorchid"|upper %}</div>
     {% for puppy in offspring %}
-        <div {% if forloop.last %}class="right"{% endif %}>{{ puppy.cryptorchid }}</div>
+        <div {% if forloop.last %}class="right"{% endif %}>{% if puppy.cryptorchid %}{% translate "True" %}{% else %}{% translate "False" %}{% endif %}</div>
     {% endfor %}
 
     <div class="table-heading left">{% translate "Hip joints"|upper %}</div>
