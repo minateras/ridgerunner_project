@@ -8,5 +8,5 @@ urlpatterns = [
     path('', ridgerunner_app_urls),
     path('ridgerunner_app/', ridgerunner_app_urls),
     # path('workingridge_app/', include('workingridge_app.urls')),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
 ]
