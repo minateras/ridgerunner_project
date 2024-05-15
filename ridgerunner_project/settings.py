@@ -12,6 +12,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False # Don't run with debug turned on in production!
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 ALLOWED_HOSTS = [
     'www.ridgerunner.se',
 ]
