@@ -1,6 +1,6 @@
 function overflowX(element) {
-    if (element.scrollWidth > element.clientWidth) element.style.overflowX = "scroll";
-    else element.style.overflowX = "auto";
+    if (element.scrollWidth > element.clientWidth) element.style.overflowX = 'scroll';
+    else element.style.overflowX = 'auto';
 }
 
 
