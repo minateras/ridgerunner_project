@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False # Don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    'minateras.eu.pythonanywhere.com',
+    'www.ridgerunner.se',
 ]
 
 INSTALLED_APPS = [
