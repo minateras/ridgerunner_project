@@ -123,20 +123,26 @@ body {
         row-gap: var(--g-biggest);
 
         > nav {
+            align-items: center;
             display: flex;
             flex-direction: column;
             row-gap: var(--g-bigger);
 
-            > a {
+            > .link, > .logo, > p {
                 color: var(--c-white);
+            }
+
+            > .link, > .logo {
                 font-family: 'Roboto Mono';
             }
-        }
 
-        > .logo {
-            color: var(--c-white);
-            font-family: 'Roboto Mono';
-            font-size: var(--f-big);
+            > .logo {
+                font-size: var(--f-big);
+            }
+
+            > p {
+                font-size: var(--f-smallest);
+            }
         }
     }
 

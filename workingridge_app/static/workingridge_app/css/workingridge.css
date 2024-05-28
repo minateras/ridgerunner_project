@@ -109,18 +109,22 @@ body > header {
   row-gap: var(--g-biggest);
 }
 body > header > nav {
+  align-items: center;
   display: flex;
   flex-direction: column;
   row-gap: var(--g-bigger);
 }
-body > header > nav > a {
+body > header > nav > .link, body > header > nav > .logo, body > header > nav > p {
   color: var(--c-white);
+}
+body > header > nav > .link, body > header > nav > .logo {
   font-family: "Roboto Mono";
 }
-body > header > .logo {
-  color: var(--c-white);
-  font-family: "Roboto Mono";
+body > header > nav > .logo {
   font-size: var(--f-big);
+}
+body > header > nav > p {
+  font-size: var(--f-smallest);
 }
 body > main {
   grid-column: 2/3;

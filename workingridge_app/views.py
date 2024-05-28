@@ -2,7 +2,7 @@ import json
 
 from django.shortcuts import render
 
-from .models import Dog2, Kennel2, Sport2
+from .models import CompetitionResult2, Dog2, Kennel2, Sport2
 
 
 def workingridge(request):
@@ -23,10 +23,12 @@ def workingridge(request):
             min_number_of_titles = int(request.POST['min_number_of_titles'])
         if request.POST.get('exclude_blood_tracking') is not None:
             exclude_blood_tracking = True if request.POST['exclude_blood_tracking'] == 'on' else False
+    date = CompetitionResult2.get_date()
     sports = Sport2.get_sports()
     dogs = Dog2.get_dogs(min_number_of_titles, sport[0], exclusive)
     kennels = Kennel2.get_kennels(exclude_blood_tracking)
     context = {
+        'date': f'{date.year}-{f'{date.month:02}'}-{f'{date.day:02}'}',
         'year': 1993,
         'interval': 'drygt 30',
         'first_page': {},

@@ -100,6 +100,12 @@ class CompetitionResult2(models.Model):
         db_table = 'competition_result2'
 
 
+    @staticmethod
+    def get_date():
+        query = list(CompetitionResult2.objects.raw('''SELECT DISTINCT id, date FROM competition_result2 GROUP BY id ORDER BY date DESC LIMIT 1'''))
+        return query[0].date
+
+
 class TitleDog2(models.Model):
     # id = models.AutoField(primary_key=True)
     title = models.ForeignKey(Title2, db_column='title', on_delete=models.CASCADE)

@@ -18,12 +18,15 @@
     <body>
         <header>
             <nav>
-                <a href="#first-page">1</a>
-                <a href="#second-page">2</a>
-                <a href="#third-page">3</a>
-                <a href="#fourth-page">4</a>
+                <a class="link" href="#first-page">1</a>
+                <a class="link" href="#second-page">2</a>
+                <a class="link" href="#third-page">3</a>
+                <a class="link" href="#fourth-page">4</a>
             </nav>
-            <a class="logo" href="{% url "news" %}">MD</a> {% comment %}TODO: Add logotype.{% endcomment %}
+            <nav>
+                <a class="logo" href="{% url "news" %}">MD</a> {% comment %}TODO: Add logotype.{% endcomment %}
+                <p>{{ date }}</p>
+            </nav>
         </header>
         <main>
             {% include "./first_page.html" with first_page=first_page %}
