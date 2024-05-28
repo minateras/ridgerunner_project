@@ -52,7 +52,7 @@ class Dog2(models.Model):
     def get_dogs(min_number_of_titles, sport, exclusive):
         query = None
         if sport == 0:
-            query = list(Dog2.objects.raw(f'''SELECT d.id, d.kennel_name, d.registration_number, COUNT(td.date) AS number_of_titles, GROUP_CONCAT(t.title ORDER BY t.id SEPARATOR ', ') as titles FROM dog2 AS d LEFT JOIN title_dog2 AS td ON d.id = td.dog LEFT JOIN title2 AS t ON td.title = t.id GROUP BY d.id, d.kennel_name, d.registration_number{f' HAVING number_of_titles >= {min_number_of_titles}' if 1 == 2 is not None else ''} ORDER BY number_of_titles DESC, kennel_name;'''))
+            query = list(Dog2.objects.raw(f'''SELECT d.id, d.kennel_name, d.registration_number, COUNT(td.date) AS number_of_titles, GROUP_CONCAT(t.title ORDER BY t.id SEPARATOR ', ') as titles FROM dog2 AS d LEFT JOIN title_dog2 AS td ON d.id = td.dog LEFT JOIN title2 AS t ON td.title = t.id GROUP BY d.id, d.kennel_name, d.registration_number{f' HAVING number_of_titles >= {min_number_of_titles}' if 1 == 2 else ''} ORDER BY number_of_titles DESC, kennel_name;'''))
         else:
             print(sport)
             if exclusive == 1:
