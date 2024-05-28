@@ -1,0 +1,25 @@
+#first-page {
+  justify-content: space-between;
+  row-gap: var(--g-biggest);
+}
+#first-page > section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-smaller);
+}
+#first-page > section > h1, #first-page > section > h2 {
+  font-family: "Roboto Mono";
+  text-align: center;
+}
+#first-page > section > h1 {
+  font-size: var(--f-biggest);
+  font-weight: 600;
+}
+#first-page > section > h2 {
+  font-size: var(--f-big);
+}
+#first-page > section > p:nth-last-child(2), #first-page > section > p:last-child, #first-page > section > p:last-child > a {
+  font-size: var(--f-smaller);
+}
+
+/*# sourceMappingURL=first_page.css.map */

@@ -1,0 +1,224 @@
+@import url(./first_page.css);
+@import url(./second_page.css);
+@import url(./third_page.css);
+@import url(./fourth_page.css);
+:root {
+  --c-white: rgb(255, 255, 255);
+  --c-gray-light: rgb(245, 245, 245);
+  --c-gray-medium: rgb(225, 225, 225);
+  --c-black: rgb(0, 0, 0);
+  --c-green-light: rgb(220, 240, 220);
+  --c-green-medium: rgb(140, 160, 140);
+  --c-green-dark: rgb(40, 60, 40);
+  --g-smallest: 2px;
+  --g-smaller: 5px;
+  --g-small: 7px;
+  --g-big: 10px;
+  --g-bigger: 20px;
+  --g-biggest: 30px;
+  --f-smallest: 14px;
+  --f-smaller: 16px;
+  --f-small: 18px;
+  --f-big: 30px;
+  --f-bigger: 40px;
+  --f-biggest: 70px;
+  --border: 0.5px solid;
+  --border-radius: 6px;
+  --t-short: 0.3s ease-in-out;
+  --t-long: 1s ease-in-out;
+}
+
+* {
+  background-color: unset;
+  border: unset;
+  box-sizing: border-box;
+  color: var(--c-black);
+  cursor: unset;
+  display: block;
+  font-family: "Quicksand";
+  font-size: var(--f-small);
+  font-style: normal;
+  font-weight: normal;
+  margin: unset;
+  padding: unset;
+  text-align: left;
+  text-decoration: unset;
+  text-overflow: ellipsis;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+*[hidden] {
+  display: none;
+}
+
+a:not([disabled]), button:not([disabled]), input:not([disabled]), select:not([disabled]) {
+  cursor: pointer;
+}
+
+p > a {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+input, select {
+  appearance: none;
+  background-color: var(--c-green-light);
+  border: 1px solid var(--c-green-medium);
+  border-radius: var(--border-radius);
+}
+input[odd], select[odd] {
+  background-color: var(--c-gray-light);
+}
+
+input {
+  height: var(--g-bigger);
+  width: var(--g-bigger);
+}
+input[checked] {
+  background-color: var(--c-black);
+}
+
+select {
+  padding-top: var(--g-smaller);
+  padding-left: var(--g-small);
+  padding-right: var(--g-small);
+  padding-bottom: var(--g-smaller);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 100%;
+}
+body > header {
+  align-items: center;
+  background-color: var(--c-green-dark);
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-content: space-between;
+  padding: var(--g-biggest);
+  row-gap: var(--g-biggest);
+}
+body > header > nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-bigger);
+}
+body > header > nav > a {
+  color: var(--c-white);
+  font-family: "Roboto Mono";
+}
+body > header > .logo {
+  color: var(--c-white);
+  font-family: "Roboto Mono";
+  font-size: var(--f-big);
+}
+body > main {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  overflow-y: scroll;
+}
+body > main .page {
+  background-color: var(--c-gray-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--g-biggest);
+}
+body > main .page .heading-desktop {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-bigger);
+  position: sticky;
+  top: var(--g-bigger);
+}
+body > main .page .heading-desktop > section:first-child {
+  display: grid;
+  grid-template-columns: max-content var(--g-big) 1fr;
+  grid-template-rows: repeat(auto-fill, max-content);
+}
+body > main .page .heading-desktop > section:first-child h2 {
+  font-size: var(--f-bigger);
+}
+body > main .page .heading-desktop > section:first-child > h2:first-child {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body > main .page .heading-desktop > section:first-child > h1:nth-child(2) {
+  font-family: "Roboto Mono";
+  font-size: var(--f-biggest);
+  font-weight: 600;
+  grid-column: 1/2;
+  grid-row: 2/5;
+  letter-spacing: 2px;
+  text-align: center;
+}
+body > main .page .heading-desktop > section:first-child > h2:nth-child(3) {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+body > main .page .heading-desktop > section:first-child > h2:nth-child(4) {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+body > main .page .heading-desktop > section:first-child > h2:last-child {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+body > main .page .heading-desktop > h3:nth-child(2) {
+  font-family: "Roboto Mono";
+  font-weight: 600;
+  font-size: var(--f-smallest);
+  letter-spacing: 1px;
+}
+body > main .page .heading-mobile {
+  display: none;
+  font-size: var(--f-bigger);
+}
+body > main .page .flex {
+  flex: 1;
+}
+body > main .odd {
+  background-color: var(--c-green-light);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --f-smallest: 10px;
+    --f-smaller: 12px;
+    --f-small: 14px;
+    --f-big: 18px;
+    --f-bigger: 24px;
+    --f-biggest: 30px;
+  }
+  body {
+    grid-template-columns: 1fr;
+  }
+  body > header {
+    display: none;
+  }
+  body > main {
+    grid-column: 1/2;
+  }
+  body > main .page {
+    min-height: 90%;
+  }
+  body > main .page .heading-desktop {
+    display: none;
+  }
+  body > main .page .heading-mobile {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=workingridge.css.map */

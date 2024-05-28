@@ -1,0 +1,70 @@
+{% load filters_2 %}
+<div class="page" id="second-page">
+    <section class="container">
+        <form action="{% url "workingridge" %}#second-page" id="filter-titles" method="post">
+            {% csrf_token %}
+            <label for="sport">SPORT</label>
+            <select id="sport" name="sport">
+                <option value='[0, "Samtliga"]' {% if second_page.sport.0 == 0 %}selected{% endif %}>Samtliga</option>
+                {% for sport in second_page.sports %}
+                    <option value='[{{ sport.id }}, "{{ sport.sport }}"]' {% if second_page.sport.0 == sport.id %}selected{% endif %}>{{ sport.sport }}</option>
+                {% endfor %}
+            </select>
+            <section class="exclusive-container">
+                <input id="exclusive" name="exclusive" type="checkbox" {% if second_page.sport.0 != 0 and second_page.exclusive == 1 %}checked{% endif %} {% if second_page.sport.0 == 0 %}disabled{% endif %}>
+                <label for="exclusive">EXKLUSIVE TITLAR FRÅN ÖVRIGA SPORTER</label>
+            </section>
+        </form>
+        <div class="list-heading">PLACERING</div>
+        <div class="list-heading">INFORMATION</div>
+        <section class="content">
+            {% if second_page.number_of_dogs > 0 %}
+                {% for number_of_titles, dogs in second_page.dogs.items %}
+                    {% for dog in dogs %}
+                        <div class="placement{% if dog.1.odd %} odd{% endif %}">{{ dog.0 }}</div>
+                        <div class="number_of_titles{% if dog.1.odd %} odd{% endif %}">{{ number_of_titles }} TITLAR:</div>
+                        <ul class="titles{% if dog.1.odd %} odd{% endif %}">
+                            {% for title in dog.1.titles|string_to_list %}
+                                <li>{{ title }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="registration_number{% if dog.1.odd %} odd{% endif %}">{{ dog.1.registration_number }}</div>
+                        <div class="kennel_name{% if dog.1.odd %} odd{% endif %}">{{ dog.1.kennel_name }}</div>
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                <section class="empty">Inga hundar matchar kriterierna</section>
+            {% endif %}
+            <form action="{% url "workingridge" %}#load-titles" id="load-titles" method="post" style="scroll-margin-top: {{ second_page.position }}px;">
+                {% csrf_token %}
+                <input hidden name="sport" readonly value='[{{ second_page.sport.0 }}, "{{ second_page.sport.1 }}"]'>
+                <input hidden name="exclusive" readonly value="{{ second_page.exclusive }}">
+                <input hidden name="position" readonly value="{{ second_page.position }}">
+                <input hidden name="min_number_of_titles" readonly value="{{ second_page.min_number_of_titles|add:"-1" }}">
+                <button {% if second_page.number_of_dogs|is_even %}even{% endif %} {% if second_page.remaining_number_of_dogs <= 0 or second_page.min_number_of_titles <= 1 %}hidden{% endif %}>
+                    <p>LADDA ALLA HUNDAR MED {{ second_page.min_number_of_titles|add:"-1" }} {% if second_page.min_number_of_titles|add:"-1" > 1 %}TITLAR{% else %}TITEL{% endif %}</p>
+                </button>
+            </form>
+        </section>
+        <section class="heading-desktop" style="grid-row-end: {% if second_page.number_of_dogs > 0 %}calc({{ second_page.number_of_dogs }} * 2 + 3){% else %}3{% endif %};">
+            <section>
+                <h2>TOPP</h2>
+                <h1 id="number_of_dogs">{{ second_page.number_of_dogs }}</h1>
+                <h2>MEST</h2>
+                <h2>FRAMGÅNGSRIKA</h2>
+                <h2>HUNDARNA</h2>
+            </section>
+            <h3>SETT TILL ANTALET TITLAR</h3>
+            <p>
+                De individer som erövrat flest titlar i {% if second_page.sport.0 != 0 and second_page.exclusive == 1 %}{{ second_page.sport.1|lower }}{% else %}hundsport{% if second_page.sport.0 != 0 %}, inklusive {{ second_page.sport.1|lower }},{% endif %}{% endif %} sedan {{ year }}.
+                Det vill säga de hundar som har minst {{ second_page.min_number_of_titles }} {% if second_page.min_number_of_titles > 1 %}titlar{% else %}titel{% endif %}.
+            </p>
+            <p>
+                Observera att om flera hundar har samma antal titlar så placeras de på delad listplats i alfabetisk ordning och efterföljande placeringar utgår.
+                Minst 10 hundar listas i de fall det finns fler individer än så.
+            </p>
+        </section>
+        <section class="heading-mobile">TOPP {{ second_page.number_of_dogs }} MEST FRAMGÅNGSRIKA HUNDARNA</section>
+    </section>
+    <div class="flex"></div>
+</div>

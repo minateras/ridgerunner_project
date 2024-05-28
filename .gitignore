@@ -6,6 +6,5 @@ node_modules
 *.mo
 migrations/
 *.css.map
-workingridge_app
 package.json
 TODO.md

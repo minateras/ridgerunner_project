@@ -1,0 +1,13 @@
+#fourth-page {
+  justify-content: center;
+  row-gap: var(--g-smaller);
+}
+#fourth-page > h2, #fourth-page > p {
+  text-align: center;
+}
+#fourth-page > h2 {
+  font-family: "Roboto Mono";
+  font-size: var(--f-big);
+}
+
+/*# sourceMappingURL=fourth_page.css.map */

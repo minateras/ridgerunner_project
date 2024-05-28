@@ -1,0 +1,31 @@
+#first-page {
+    // background-image: url('../assets/test.jpg');
+    // background-position: center;
+    // background-size: cover;
+    justify-content: space-between;
+    row-gap: var(--g-biggest);
+
+    > section {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--g-smaller);
+
+        > h1, > h2 {
+            font-family: 'Roboto Mono';
+            text-align: center;
+        }
+
+        > h1 {
+            font-size: var(--f-biggest);
+            font-weight: 600;
+        }
+
+        > h2 {
+            font-size: var(--f-big);
+        }
+
+        > p:nth-last-child(2), > p:last-child, > p:last-child > a {
+            font-size: var(--f-smaller);
+        }
+    }
+}

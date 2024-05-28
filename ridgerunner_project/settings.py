@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ridgerunner_app.apps.RidgerunnerAppConfig',
-    # 'workingridge_app.apps.WorkingridgeAppConfig',
+    'workingridge_app.apps.WorkingridgeAppConfig',
 ]
 
 MIDDLEWARE = [

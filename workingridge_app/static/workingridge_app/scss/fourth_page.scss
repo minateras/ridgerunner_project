@@ -1,0 +1,13 @@
+#fourth-page {
+    justify-content: center;
+    row-gap: var(--g-smaller);
+
+    > h2, > p {
+        text-align: center;
+    }
+
+    > h2 {
+        font-family: 'Roboto Mono';
+        font-size: var(--f-big);
+    }
+}

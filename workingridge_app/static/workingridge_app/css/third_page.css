@@ -1,0 +1,91 @@
+#third-page > .container {
+  column-gap: var(--g-biggest);
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  grid-template-rows: repeat(auto-fill, max-content);
+  row-gap: var(--g-bigger);
+}
+#third-page > .container > #filter-kennels {
+  align-items: center;
+  column-gap: var(--g-small);
+  display: flex;
+  flex-direction: row;
+  grid-column: span 2;
+  grid-row: 1/2;
+}
+#third-page > .container > #filter-kennels > label {
+  font-family: "Roboto Mono";
+  font-size: var(--f-smallest);
+  font-weight: 600;
+}
+#third-page > .container > .content {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  grid-template-columns: max-content min-content max-content;
+  grid-template-rows: repeat(auto-fill, max-content);
+  justify-content: center;
+}
+#third-page > .container > .content > .row:first-child > .line:nth-child(2) {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+#third-page > .container > .content > .row:last-child > .line:nth-child(2) {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+#third-page > .container > .content > .row {
+  column-gap: var(--g-bigger);
+  display: grid;
+  grid-column: span 3;
+  grid-row: span 1;
+  grid-template-columns: subgrid;
+  grid-template-rows: max-content;
+}
+#third-page > .container > .content > .row > .even > p:first-child, #third-page > .container > .content > .row > .odd > p:first-child {
+  font-family: "Roboto Mono";
+  font-size: var(--f-smallest);
+  font-weight: 600;
+}
+#third-page > .container > .content > .row > .even {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#third-page > .container > .content > .row > .even > p {
+  text-align: right;
+}
+#third-page > .container > .content > .row > .odd {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+#third-page > .container > .content > .row > .line {
+  background-color: var(--c-black);
+  grid-column: 2/3;
+  grid-row: 1/2;
+  min-height: var(--g-biggest);
+  width: var(--g-small);
+}
+#third-page > .container > .heading-desktop {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+#third-page > .container > .heading-mobile {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+@media (max-width: 900px) {
+  #third-page > .container {
+    grid-template-columns: 1fr;
+  }
+  #third-page > .container > #filter-kennels {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  #third-page > .container > .content {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+
+/*# sourceMappingURL=third_page.css.map */

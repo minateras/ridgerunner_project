@@ -1,0 +1,180 @@
+#second-page > .container {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr var(--g-biggest) 1fr;
+  grid-template-rows: repeat(auto-fill, max-content);
+}
+#second-page > .container > #filter-titles {
+  align-items: center;
+  display: grid;
+  grid-column: span 5;
+  grid-row: 1/2;
+  grid-template-columns: max-content var(--g-bigger) max-content;
+  grid-template-rows: repeat(auto-fill, max-content);
+  padding-bottom: var(--g-bigger);
+}
+#second-page > .container > #filter-titles label {
+  font-family: "Roboto Mono";
+  font-size: var(--f-smallest);
+  font-weight: 600;
+}
+#second-page > .container > #filter-titles > label:nth-child(2) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-bottom: var(--g-small);
+}
+#second-page > .container > #filter-titles > select:nth-child(3) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+#second-page > .container > #filter-titles > .exclusive-container {
+  align-items: center;
+  column-gap: var(--g-small);
+  display: flex;
+  flex-direction: row;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#second-page > .container > .list-heading {
+  font-family: "Roboto Mono";
+  font-size: var(--f-smallest);
+  font-weight: 600;
+  grid-row: 2/3;
+  letter-spacing: 1px;
+  padding-bottom: var(--g-big);
+}
+#second-page > .container > .list-heading:nth-child(2) {
+  grid-column: 1/2;
+  padding-right: var(--g-bigger);
+}
+#second-page > .container > .list-heading:nth-child(3) {
+  grid-column: 2/6;
+}
+#second-page > .container > .content {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
+  grid-template-rows: repeat(auto-fill, max-content);
+}
+#second-page > .container > .content > .placement {
+  font-family: "Roboto Mono";
+  font-weight: 600;
+  grid-column: 1/2;
+  grid-row: span 2;
+  padding-top: var(--g-small);
+  padding-right: var(--g-bigger);
+  padding-bottom: var(--g-small);
+  text-align: right;
+}
+#second-page > .container > .content > .number_of_titles {
+  grid-column: 2/3;
+  padding-top: var(--g-small);
+  padding-right: var(--g-bigger);
+  padding-bottom: var(--g-small);
+}
+#second-page > .container > .content > .titles {
+  column-gap: var(--g-big);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-column: 3/4;
+  padding-top: var(--g-small);
+  padding-right: var(--g-small);
+  padding-bottom: var(--g-small);
+  row-gap: var(--g-smallest);
+}
+#second-page > .container > .content > .titles > li {
+  white-space: nowrap;
+}
+#second-page > .container > .content > .registration_number {
+  font-weight: 600;
+  grid-column: 2/3;
+  padding-right: var(--g-bigger);
+  padding-bottom: var(--g-small);
+}
+#second-page > .container > .content > .kennel_name {
+  grid-column: 3/4;
+  padding-right: var(--g-small);
+  padding-bottom: var(--g-small);
+}
+#second-page > .container > .content > .empty {
+  grid-column: 1/4;
+}
+#second-page > .container > .content > #load-titles {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
+}
+#second-page > .container > .content > #load-titles > button:not([hidden]) {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
+  padding-top: var(--g-small);
+  padding-bottom: var(--g-small);
+}
+#second-page > .container > .content > #load-titles > button:not([hidden]):hover {
+  background-color: var(--c-green-light);
+  transition: background-color var(--t-short);
+}
+#second-page > .container > .content > #load-titles > button:not([hidden])[even] {
+  background-color: var(--c-green-light);
+}
+#second-page > .container > .content > #load-titles > button:not([hidden])[even]:hover {
+  background-color: var(--c-gray-light);
+}
+#second-page > .container > .content > #load-titles > button:not([hidden]) > p {
+  font-family: "Roboto Mono";
+  font-size: var(--f-smallest);
+  font-weight: 600;
+  grid-column: 3/4;
+  letter-spacing: 1px;
+}
+#second-page > .container > .heading-desktop {
+  grid-column: 5/6;
+  grid-row-start: 3;
+}
+#second-page > .container > .heading-mobile {
+  grid-column: span 5;
+  grid-row: 1/2;
+  padding-bottom: var(--g-bigger);
+}
+
+@media (max-width: 900px) {
+  #second-page > .container > #filter-titles {
+    grid-row: 2/3;
+    grid-template-columns: max-content;
+    padding-bottom: var(--g-bigger);
+  }
+  #second-page > .container > #filter-titles > select:nth-child(3) {
+    margin-bottom: var(--g-big);
+  }
+  #second-page > .container > #filter-titles > .exclusive-container {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  #second-page > .container > .list-heading {
+    grid-row: 3/4;
+  }
+  #second-page > .container > .list-heading:last-child {
+    grid-column: 2/6;
+  }
+  #second-page > .container > .content {
+    grid-column: span 5;
+  }
+  #second-page > .container > .content > .titles, #second-page > .container > .content > .kennel_name {
+    grid-column: 3/6;
+  }
+  #second-page > .container > .content > .empty {
+    grid-column: span 5;
+  }
+  #second-page > .container > .content > #load-titles {
+    grid-column: span 5;
+  }
+  #second-page > .container > .content > #load-titles > button:not([hidden]) {
+    grid-column: span 5;
+  }
+  #second-page > .container > .content > #load-titles > button:not([hidden]) > p {
+    grid-column: 2/6;
+  }
+}
+
+/*# sourceMappingURL=second_page.css.map */

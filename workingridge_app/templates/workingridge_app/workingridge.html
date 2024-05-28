@@ -1,0 +1,35 @@
+<html lang="se">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        {% load i18n %}
+        {% load filters_2 %}
+        <link rel="stylesheet" href="{% static "workingridge_app/css/workingridge.css" %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:600">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:600">
+        <script src="{% static "workingridge_app/js/workingridge.js" %}" defer></script>
+    </head>
+
+
+
+    <body>
+        <header>
+            <nav>
+                <a href="#first-page">1</a>
+                <a href="#second-page">2</a>
+                <a href="#third-page">3</a>
+                <a href="#fourth-page">4</a>
+            </nav>
+            <a class="logo" href="{% url "news" %}">MD</a> {% comment %}TODO: Add logotype.{% endcomment %}
+        </header>
+        <main>
+            {% include "./first_page.html" with first_page=first_page %}
+            {% include "./second_page.html" with second_page=second_page %}
+            {% include "./third_page.html" with third_page=third_page %}
+            {% include "./fourth_page.html" with fourth_page=fourth_page %}
+        </main>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+{% load filters_2 %}
+<div class="page odd" id="third-page">
+    <section class="container">
+        <section class="heading-desktop">
+            <section>
+                <h2>TOPP</h2>
+                <h1 id="number_of_dogs">{{ third_page.number_of_kennels }}</h1>
+                <h2>MEST</h2>
+                <h2>FRAMGÅNGSRIKA</h2>
+                <h2>KENNLARNA</h2>
+            </section>
+            <h3>SETT TILL ANTALET TITLAR</h3>
+            <p>
+                De kennlar som har flest unika individer som erövrat titlar i hundsport sedan {{ year }}.
+                Det vill säga de kennlar som har minst {{ third_page.min_number_of_dogs }} {% if third_page.min_number_of_dogs|length > 0 %}individer{% else %}individ{% endif %} med titel.
+            </p>
+            <p>
+                Observera att om flera kennlar har samma antal individer med titel så placeras de på delad listplats i alfabetisk ordning och efterföljande placeringar utgår.
+                Minst 10 kennlar listas.
+            </p>
+            <p>
+                Eftersom viltspårchampions är så vanligt förekommande i rasen finns möjligheten att exkludera individer som endast har titel i viltspår.
+                Därmed tar beräkningen endast hänsyn till individer som har minst en titel i en annan hundsport.
+            </p>
+        </section>
+        <section class="heading-mobile">TOPP {{ third_page.number_of_kennels }} MEST FRAMGÅNGSRIKA KENNLARNA</section>
+        <form action="{% url "workingridge" %}#third-page" id="filter-kennels" method="post">
+            {% csrf_token %}
+            <input {% if third_page.exclude_blood_tracking == True %}checked{% endif %} id="exclude-blood-tracking" name="exclude_blood_tracking" odd type="checkbox">
+            <label for="exclude_blood_tracking">EXKLUSIVE VILTSPÅRCHAMPIONS</label>
+        </form>
+        <section class="content">
+            {% for number_of_titles, kennels in third_page.kennels.items %}
+                <section class="row">
+                    <div class="{% if number_of_titles|is_odd %}even{% else %}odd{% endif %}">
+                        {% if kennels|length > 0 %}<p>{{ number_of_titles }} INDIVIDER:</p>{% endif %}
+                        {% for kennel in kennels %}
+                            <p>{{ kennel.0 }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="line" {% if third_page.exclude_blood_tracking == 1 %}style="min-height: calc(3 * var(--g-biggest));"{% endif %}></div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+    <section class="flex"></section>
+</div>
