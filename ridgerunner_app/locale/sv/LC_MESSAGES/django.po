@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-16 00:44+0200\n"
+"POT-Creation-Date: 2024-05-28 18:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,19 +157,25 @@ msgid ""
 "That you'll spend time with your dog and mentally stimulate it in some form. "
 "You don't have to be interested in competing, but considering our breeding "
 "goals, we of course appreciate if you have competition ambitions!"
-msgstr "Att du vill och har möjlighet att lägga tid på din hund och aktivera den i någon form. Du behöver inte vara intresserad av att tävla, men med tanke på våra avelsmål uppskattar vi såklart om tävlingsambitioner finns!"
+msgstr ""
+"Att du vill och har möjlighet att lägga tid på din hund och aktivera den i "
+"någon form. Du behöver inte vara intresserad av att tävla, men med tanke på "
+"våra avelsmål uppskattar vi såklart om tävlingsambitioner finns!"
 
 #: ridgerunner_app/templates/ridgerunner_app/about_us.html:126
 msgid ""
 "That you'll x-ray your dog's hips (HD) and elbows (ED) when it's between "
 "12-18 months old."
-msgstr "Att du låter röntga hundens höfter (HD) och armbågar (ED) när den är mellan 12-18 månader gammal."
+msgstr ""
+"Att du låter röntga hundens höfter (HD) och armbågar (ED) när den är mellan "
+"12-18 månader gammal."
 
 #: ridgerunner_app/templates/ridgerunner_app/about_us.html:130
 msgid ""
 "That you participate with the dog in the mental test (BPH) that we organize "
 "for the litter."
-msgstr "Att du deltar med hunden i det mentaltest (BPH) som vi anordnar för kullen."
+msgstr ""
+"Att du deltar med hunden i det mentaltest (BPH) som vi anordnar för kullen."
 
 #: ridgerunner_app/templates/ridgerunner_app/components/footer.html:4
 msgid "Follow me and the pack on Instagram"
@@ -448,8 +454,16 @@ msgstr ""
 "avelsmål under"
 
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
-msgid "and you'll get an idea of what we're looking for."
-msgstr "så får du en idé vad vi letar efter."
+msgid ""
+"and you'll get an idea of what we're looking for. Thanks to Mina's side "
+"project,"
+msgstr "så får du en idé vad vi letar efter. Tack vare Minas sidoprojekt,"
+
+#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
+msgid ""
+", we've a good overview of the breed's Swedish individuals. Tips on foreign "
+"individuals are therefore of particular interest."
+msgstr ", har vi en bra överblick av rasen svenska individer. Tips på utländska individer är därför av särskilt intresse."
 
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:39
 #: ridgerunner_app/templates/ridgerunner_app/litter.html:87
