@@ -28,7 +28,7 @@ def workingridge(request):
     dogs = Dog2.get_dogs(min_number_of_titles, sport[0], exclusive)
     kennels = Kennel2.get_kennels(exclude_blood_tracking)
     context = {
-        'date': f'{date.year}-{f'{date.month:02}'}-{f'{date.day:02}'}',
+        'date': f'{date.year}-{str(date.month).zfill(2)}-{str(date.day).zfill(2)}',
         'year': 1993,
         'interval': 'drygt 30',
         'first_page': {},
