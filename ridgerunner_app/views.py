@@ -16,6 +16,7 @@ def news(request):
     posts = LocalizedPost.get_all()
     congratulations = LocalizedCongratulations.get_all()
     context = {
+        'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'posts': posts,
         'congratulations': congratulations,
     }
@@ -89,6 +90,7 @@ def about_us(request):
 
 def contact_us(request):
     context = {
+        'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'RECAPTCHA_SITE_KEY': os.getenv('RECAPTCHA_SITE_KEY'),
         'success_message': None,
         'first_name': None,

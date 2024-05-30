@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-28 18:56+0200\n"
+"POT-Creation-Date: 2024-05-31 00:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -454,16 +454,8 @@ msgstr ""
 "avelsmål under"
 
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
-msgid ""
-"and you'll get an idea of what we're looking for. Thanks to Mina's side "
-"project,"
-msgstr "så får du en idé vad vi letar efter. Tack vare Minas sidoprojekt,"
-
-#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
-msgid ""
-", we've a good overview of the breed's Swedish individuals. Tips on foreign "
-"individuals are therefore of particular interest."
-msgstr ", har vi en bra överblick av rasen svenska individer. Tips på utländska individer är därför av särskilt intresse."
+msgid "and you'll get an idea of what we're looking for."
+msgstr "så får du en idé vad vi letar efter."
 
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:39
 #: ridgerunner_app/templates/ridgerunner_app/litter.html:87
@@ -669,19 +661,19 @@ msgstr "%(number_of_males)s hanar & %(number_of_females)s tikar"
 msgid "Statistics"
 msgstr "Statistik"
 
-#: ridgerunner_app/templates/ridgerunner_app/news.html:41
+#: ridgerunner_app/templates/ridgerunner_app/news.html:50
 msgid "Congratulations"
 msgstr "Grattis"
 
-#: ridgerunner_app/templates/ridgerunner_app/news.html:61
+#: ridgerunner_app/templates/ridgerunner_app/news.html:70
 msgid "Congrats to owner"
 msgstr "Grattis till ägare"
 
-#: ridgerunner_app/views.py:121
+#: ridgerunner_app/views.py:123
 msgid "Your message was successfully sent! We'll get back to you shortly."
 msgstr "Ditt meddelande skickades! Vi återkommer till dig inom kort."
 
-#: ridgerunner_app/views.py:128
+#: ridgerunner_app/views.py:130
 msgid "Your reCAPTCHA response couldn't be verified."
 msgstr "Ditt reCAPTCHA-svar kunde inte verifieras."
 

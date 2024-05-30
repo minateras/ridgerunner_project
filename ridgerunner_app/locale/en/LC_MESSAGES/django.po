@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-28 18:56+0200\n"
+"POT-Creation-Date: 2024-05-31 00:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -410,15 +410,7 @@ msgid ""
 msgstr ""
 
 #: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
-msgid ""
-"and you'll get an idea of what we're looking for. Thanks to Mina's side "
-"project,"
-msgstr ""
-
-#: ridgerunner_app/templates/ridgerunner_app/contact_us.html:79
-msgid ""
-", we've a good overview of the breed's Swedish individuals. Tips on foreign "
-"individuals are therefore of particular interest."
+msgid "and you'll get an idea of what we're looking for."
 msgstr ""
 
 #: ridgerunner_app/templates/ridgerunner_app/dog.html:39
@@ -625,19 +617,19 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: ridgerunner_app/templates/ridgerunner_app/news.html:41
+#: ridgerunner_app/templates/ridgerunner_app/news.html:50
 msgid "Congratulations"
 msgstr ""
 
-#: ridgerunner_app/templates/ridgerunner_app/news.html:61
+#: ridgerunner_app/templates/ridgerunner_app/news.html:70
 msgid "Congrats to owner"
 msgstr ""
 
-#: ridgerunner_app/views.py:121
+#: ridgerunner_app/views.py:123
 msgid "Your message was successfully sent! We'll get back to you shortly."
 msgstr ""
 
-#: ridgerunner_app/views.py:128
+#: ridgerunner_app/views.py:130
 msgid "Your reCAPTCHA response couldn't be verified."
 msgstr ""
 

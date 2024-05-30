@@ -5,19 +5,23 @@ main {
   grid-template-columns: 2fr 1fr;
   grid-auto-rows: max-content;
 }
-main > section:first-child, main > .sidebar {
-  grid-row: 1/2;
+main > .card, main > .sidebar {
+  grid-column: 2/3;
 }
 main > section:first-child {
   display: flex;
   flex-direction: column;
   grid-column: 1/2;
+  grid-row: 1/3;
   row-gap: var(--g-bigger);
 }
-main > .sidebar {
-  grid-column: 2/3;
+main > .sidebar:nth-child(2) {
+  grid-row: 1/2;
 }
-main > .sidebar > h1 {
+main > .sidebar:last-child {
+  grid-row: 2/3;
+}
+main > .sidebar:last-child > h1 {
   font-family: "Roboto Mono";
   font-size: var(--f-small);
   font-weight: 600;
@@ -27,14 +31,17 @@ main > .sidebar > h1 {
   main {
     grid-template-columns: 1fr;
   }
-  main > section:first-child, main > .sidebar {
+  main > .sidebar:nth-child(2), main .sidebar:last-child {
     grid-column: 1/2;
   }
   main > section:first-child {
-    grid-row: 2/3;
+    grid-row: 3/4;
   }
-  main > .sidebar {
+  main > .sidebar:nth-child(2) {
     grid-row: 1/2;
+  }
+  main > .sidebar:last-child {
+    grid-row: 2/3;
   }
 }
 

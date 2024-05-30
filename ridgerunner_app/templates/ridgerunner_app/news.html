@@ -37,6 +37,15 @@
                 {% endfor %}
             </section>
 
+            {% if LANGUAGE_CODE == "sv" %}
+                <div class="sidebar">
+                    <section>
+                        <h1>TIPS<h1>
+                        <p>Jag driver ett sidoprojekt, <a href="{% url "workingridge" %}" target="_blank">workingridge</a>, där jag tillhandahåller information och statistik om rhodesian ridgebacks aktiva i hundsport. Målet är att uppmuntra användningen av dessa hundar i avel framför hundar som endast har utställningsmeriter.</p>
+                    </section>
+                </div>
+            {% endif %}
+
             <div class="sidebar">
                 <h1>{% translate "Congratulations"|upper %}</h1>
                 {% for congrats in congratulations %}
