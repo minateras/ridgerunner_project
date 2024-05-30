@@ -6,7 +6,8 @@ document.cookie = 'previousPage=news';
 let platform = null;
 
 function handleCongratulations() {
-    const sidebar = document.getElementsByClassName('sidebar')[0];
+    let sidebar = document.getElementsByClassName('sidebar');
+    sidebar = sidebar[sidebar.length - 1];
     let button = document.getElementsByClassName('button')[0];
 
     if (window.innerWidth <= 600 && platform !== 'mobile') {
