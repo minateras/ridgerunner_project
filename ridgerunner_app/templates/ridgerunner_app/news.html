@@ -22,7 +22,7 @@
 
 
         <main>
-            <section>
+            <section {% if LANGUAGE_CODE != "sv" %}SV{% endif %}>
                 {% for post in posts %}
                     <div class="card">
                         <section class="heading">
@@ -46,7 +46,7 @@
                 </div>
             {% endif %}
 
-            <div class="sidebar">
+            <div class="sidebar" {% if LANGUAGE_CODE != "sv" %}SV{% endif %}>
                 <h1>{% translate "Congratulations"|upper %}</h1>
                 {% for congrats in congratulations %}
                     <section>
