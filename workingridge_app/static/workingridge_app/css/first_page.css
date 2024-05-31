@@ -18,8 +18,17 @@
 #first-page > section > h2 {
   font-size: var(--f-big);
 }
-#first-page > section > p:nth-last-child(2), #first-page > section > p:last-child, #first-page > section > p:last-child > a {
+#first-page > section > p:nth-last-child(3), #first-page > section > p:nth-last-child(2), #first-page > section > p:nth-last-child(2) > a, #first-page > section > p:last-child {
   font-size: var(--f-smaller);
+}
+#first-page > section > p:last-child {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #first-page > section > p:last-child {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=first_page.css.map */

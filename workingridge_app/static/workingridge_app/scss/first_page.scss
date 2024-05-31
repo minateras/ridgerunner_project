@@ -24,8 +24,22 @@
             font-size: var(--f-big);
         }
 
-        > p:nth-last-child(2), > p:last-child, > p:last-child > a {
+        > p:nth-last-child(3), > p:nth-last-child(2), > p:nth-last-child(2) > a, > p:last-child {
             font-size: var(--f-smaller);
+        }
+
+        > p:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+
+    #first-page > section {
+
+        > p:last-child {
+            display: block;
         }
     }
 }
