@@ -1,7 +1,39 @@
 from django.db import models
 
 
+class Date2(models.Model):
+    # id = models.AutoField(primary_key=True)
+    date = models.DateField()
+
+
+    class Meta:
+        db_table = 'date2'
+
+
+    @staticmethod
+    def get_date():
+        return Date2.objects.latest('date').date.strftime('%Y-%m-%d')
+
+
 class Sport2(models.Model):
+    VALID_SPORTS = (
+        (0, 'Samtliga'),
+        (1, 'Agility'),
+        (2, 'Freestyle'),
+        (3, 'Heelwork to Music (HtM)'),
+        # (4, 'IGP'),
+        (5, 'Lydnad'),
+        (6, 'Bruks'),
+        # (7, 'Patrull'),
+        (8, 'Rapport'),
+        # (9, 'Skydd'),
+        (10, 'Spår'),
+        (11, 'Sök'),
+        (12, 'Nose Work (NW)'),
+        (13, 'Rallylydnad'),
+        (14, 'Viltspår'),
+    )
+
     # id = models.AutoField(primary_key=True)
     sport = models.CharField(max_length=25, unique=True)
     parent = models.ForeignKey('self', blank=True, db_column='parent', null=True, on_delete=models.CASCADE)
@@ -54,7 +86,6 @@ class Dog2(models.Model):
         if sport == 0:
             query = list(Dog2.objects.raw(f'''SELECT d.id, d.kennel_name, d.registration_number, COUNT(td.date) AS number_of_titles, GROUP_CONCAT(t.title ORDER BY t.id SEPARATOR ', ') as titles FROM dog2 AS d LEFT JOIN title_dog2 AS td ON d.id = td.dog LEFT JOIN title2 AS t ON td.title = t.id GROUP BY d.id, d.kennel_name, d.registration_number{f' HAVING number_of_titles >= {min_number_of_titles}' if 1 == 2 else ''} ORDER BY number_of_titles DESC, kennel_name;'''))
         else:
-            print(sport)
             if exclusive == 1:
                 query = list(Dog2.objects.raw(f'''SELECT d.id, d.kennel_name, d.registration_number, COUNT(td.date) AS number_of_titles, GROUP_CONCAT(t.title ORDER BY t.id SEPARATOR ', ') as titles FROM dog2 AS d LEFT JOIN title_dog2 AS td ON d.id = td.dog LEFT JOIN title2 AS t ON td.title = t.id WHERE ((t.klass IS NOT NULL AND (SELECT IFNULL(ss.parent, ss.id) FROM sport2 AS ss, klass2 AS kk WHERE ss.id = kk.sport AND kk.id = t.klass) = %s) OR (t.sport IS NOT NULL AND t.sport = IFNULL((SELECT parent FROM sport2 WHERE id = %s), %s))) GROUP BY d.id, d.kennel_name, d.registration_number{f' HAVING number_of_titles >= {min_number_of_titles}' if 1 == 2 else ''} ORDER BY number_of_titles DESC, kennel_name;''', (sport, sport, sport)))
             else:
@@ -98,12 +129,6 @@ class CompetitionResult2(models.Model):
 
     class Meta:
         db_table = 'competition_result2'
-
-
-    @staticmethod
-    def get_date():
-        query = list(CompetitionResult2.objects.raw('''SELECT DISTINCT id, date FROM competition_result2 GROUP BY id ORDER BY date DESC LIMIT 1'''))
-        return query[0].date
 
 
 class TitleDog2(models.Model):
