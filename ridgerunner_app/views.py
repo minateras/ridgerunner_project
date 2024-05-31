@@ -1,9 +1,11 @@
 import os
 import dotenv
 import requests
+
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.utils.translation import gettext
+
 from .forms import ContactForm
 from .models import (CompetitionResult, Dog, LocalizedAward, LocalizedCongratulations, LocalizedDog, LocalizedLink, LocalizedLitter, LocalizedPost, LocalizedUnofficialTitle)
 from .templatetags import filters
@@ -13,8 +15,8 @@ dotenv.load_dotenv() # Load environment variables.
 
 
 def news(request):
-    posts = LocalizedPost.get_all()
-    congratulations = LocalizedCongratulations.get_all()
+    posts = LocalizedPost.get_all(request.LANGUAGE_CODE)
+    congratulations = LocalizedCongratulations.get_all(request.LANGUAGE_CODE)
     context = {
         'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'posts': posts,
@@ -35,12 +37,12 @@ def dogs(request):
 
 def dog(request, kennel_name):
     kennel_name = filters.switch_underscores_to_spaces(kennel_name).title()
-    dog = LocalizedDog.get_dog(kennel_name)
-    unofficial_titles = LocalizedUnofficialTitle.get_unofficial_titles(kennel_name)
-    awards = LocalizedAward.get_awards(kennel_name)
-    competition_results = CompetitionResult.get_competition_results(kennel_name)
-    links = LocalizedLink.get_links(kennel_name=kennel_name)
-    litters = LocalizedLitter.get_litters_of_dog(kennel_name)
+    dog = LocalizedDog.get_dog(request.LANGUAGE_CODE, kennel_name)
+    unofficial_titles = LocalizedUnofficialTitle.get_unofficial_titles(request.LANGUAGE_CODE, kennel_name)
+    awards = LocalizedAward.get_awards(request.LANGUAGE_CODE, kennel_name)
+    competition_results = CompetitionResult.get_competition_results(request.LANGUAGE_CODE, kennel_name)
+    links = LocalizedLink.get_links(request.LANGUAGE_CODE, kennel_name)
+    litters = LocalizedLitter.get_litters_of_dog(request.LANGUAGE_CODE, kennel_name)
     context = {
         'dog': dog,
         'unofficial_titles': unofficial_titles,
@@ -53,8 +55,8 @@ def dog(request, kennel_name):
 
 
 def puppies(request):
-    litter = LocalizedLitter.get_planned_litter()
-    links = LocalizedLink.get_links()
+    litter = LocalizedLitter.get_planned_litter(request.LANGUAGE_CODE)
+    links = LocalizedLink.get_links(request.LANGUAGE_CODE)
     context = {
         'litter': litter,
         'links': links,
@@ -64,7 +66,7 @@ def puppies(request):
 
 
 def litters(request):
-    litters = LocalizedLitter.get_litters()
+    litters = LocalizedLitter.get_litters(request.LANGUAGE_CODE)
     context = {
         'litters': litters,
     }
@@ -73,8 +75,8 @@ def litters(request):
 
 def litter(request, letter):
     letter = letter[0].upper()
-    litter = LocalizedLitter.get_litter(letter)
-    links = LocalizedLink.get_links(letter=letter)
+    litter = LocalizedLitter.get_litter(request.LANGUAGE_CODE, letter)
+    links = LocalizedLink.get_links(request.LANGUAGE_CODE, letter=letter)
     context = {
         'litter': litter,
         'links': links,

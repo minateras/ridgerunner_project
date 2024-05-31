@@ -1,4 +1,3 @@
-# from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import Q
 
@@ -160,8 +159,8 @@ class LocalizedDog(models.Model):
 
 
     @staticmethod
-    def get_dog(kennel_name):
-        return LocalizedDog.objects.filter(dog__kennel_name=kennel_name, language_code='sv')[0]
+    def get_dog(language_code, kennel_name):
+        return LocalizedDog.objects.filter(dog__kennel_name=kennel_name, language_code=language_code)[0]
 
 
 class Club(models.Model):
@@ -214,10 +213,10 @@ class LocalizedUnofficialTitle(models.Model):
 
 
     @staticmethod
-    def get_unofficial_titles(kennel_name):
+    def get_unofficial_titles(language_code, kennel_name):
         id = Dog.objects.filter(kennel_name=kennel_name)[0].id
-        clubs = list(LocalizedClub.objects.filter(language_code='sv'))
-        unofficial_titles = LocalizedUnofficialTitle.objects.filter(unofficial_title__dog_id=id, language_code='sv').order_by('unofficial_title__id')
+        clubs = list(LocalizedClub.objects.filter(language_code=language_code))
+        unofficial_titles = LocalizedUnofficialTitle.objects.filter(unofficial_title__dog_id=id, language_code=language_code).order_by('unofficial_title__id')
         data = []
         for unofficial_title in unofficial_titles:
             clubToBeAppended = None
@@ -258,10 +257,10 @@ class LocalizedAward(models.Model):
 
 
     @staticmethod
-    def get_awards(kennel_name):
+    def get_awards(language_code, kennel_name):
         id = Dog.objects.filter(kennel_name=kennel_name)[0].id
-        clubs = list(LocalizedClub.objects.filter(language_code='sv'))
-        awards = LocalizedAward.objects.filter(award__dog_id=id, language_code='sv').order_by('award__id')
+        clubs = list(LocalizedClub.objects.filter(language_code=language_code))
+        awards = LocalizedAward.objects.filter(award__dog_id=id, language_code=language_code).order_by('award__id')
         data = []
         for award in awards:
             clubToBeAppended = None
@@ -337,10 +336,10 @@ class CompetitionResult(models.Model):
 
 
     @staticmethod
-    def get_competition_results(kennel_name):
+    def get_competition_results(language_code, kennel_name):
         id = Dog.objects.filter(kennel_name=kennel_name)[0].id
-        sports = list(LocalizedSport.objects.filter(language_code='sv'))
-        klasses = list(LocalizedKlass.objects.filter(language_code='sv'))
+        sports = list(LocalizedSport.objects.filter(language_code=language_code))
+        klasses = list(LocalizedKlass.objects.filter(language_code=language_code))
         competition_results = CompetitionResult.objects.filter(dog__id=id).order_by('id')
         data = []
         for competition_result in competition_results:
@@ -391,21 +390,21 @@ class LocalizedLitter(models.Model):
 
 
     @staticmethod
-    def get_litters_of_dog(kennel_name):
+    def get_litters_of_dog(language_code, kennel_name):
         id = Dog.objects.filter(kennel_name=kennel_name)[0].id
-        return LocalizedLitter.objects.filter(Q(litter__father_id=id) | Q(litter__mother_id=id), language_code='sv').order_by('litter__id')
+        return LocalizedLitter.objects.filter(Q(litter__father_id=id) | Q(litter__mother_id=id), language_code=language_code).order_by('litter__id')
 
     @staticmethod
-    def get_planned_litter():
-        return LocalizedLitter.objects.filter(language_code='sv').order_by('litter__id').last()
+    def get_planned_litter(language_code):
+        return LocalizedLitter.objects.filter(language_code=language_code).order_by('litter__id').last()
 
     @staticmethod
-    def get_litters():
-        return LocalizedLitter.objects.filter(litter__kennel_name=None, language_code='sv').order_by('litter__id')
+    def get_litters(language_code):
+        return LocalizedLitter.objects.filter(litter__kennel_name=None, language_code=language_code).order_by('litter__id')
 
     @staticmethod
-    def get_litter(letter):
-        return LocalizedLitter.objects.filter(litter__letter=letter, language_code='sv')[0]
+    def get_litter(language_code, letter):
+        return LocalizedLitter.objects.filter(litter__letter=letter, language_code=language_code)[0]
 
 
 class Link(models.Model):
@@ -436,10 +435,15 @@ class LocalizedLink(models.Model):
 
 
     @staticmethod
-    def get_links(kennel_name=None, letter=None):
-        id = LocalizedDog.get_dog(kennel_name).dog.id if kennel_name is not None else LocalizedLitter.get_litter(letter).litter.id if letter is not None else LocalizedLitter.get_planned_litter().litter.id
-        print(id)
-        return LocalizedLink.objects.filter(Q(link__dog_id=id) | Q(link__litter_id=id), language_code='sv').order_by('link__id')
+    def get_links(language_code, kennel_name=None, letter=None):
+        id = None
+        if kennel_name is not None:
+            id = LocalizedDog.get_dog(language_code, kennel_name).dog.id
+        elif letter is not None:
+            id = LocalizedLitter.get_litter(language_code, letter).litter.id
+        else:
+            id = LocalizedLitter.get_planned_litter(language_code).litter.id
+        return LocalizedLink.objects.filter(Q(link__dog_id=id) | Q(link__litter_id=id), language_code=language_code).order_by('link__id')
 
 
 class Gallery(models.Model):
@@ -482,8 +486,8 @@ class LocalizedPost(models.Model):
 
 
     @staticmethod
-    def get_all():
-        return LocalizedPost.objects.filter(language_code='sv').order_by('-post__publication_date', '-post__pinned', '-post__id')
+    def get_all(language_code):
+        return LocalizedPost.objects.filter(language_code=language_code).order_by('-post__publication_date', '-post__pinned', '-post__id')
 
 
 class Congratulations(models.Model):
@@ -516,5 +520,5 @@ class LocalizedCongratulations(models.Model):
 
 
     @staticmethod
-    def get_all():
-        return LocalizedCongratulations.objects.filter(language_code='sv').order_by('-congratulations__publication_date', '-congratulations__id')
+    def get_all(language_code):
+        return LocalizedCongratulations.objects.filter(language_code=language_code).order_by('-congratulations__publication_date', '-congratulations__id')
