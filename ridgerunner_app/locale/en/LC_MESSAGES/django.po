@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-31 00:41+0200\n"
+"POT-Creation-Date: 2024-05-31 18:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -599,6 +599,14 @@ msgstr ""
 msgid "Litter %(letter)s"
 msgstr ""
 
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:49
+msgid "Read more about"
+msgstr ""
+
+#: ridgerunner_app/templates/ridgerunner_app/litter.html:49
+msgid "on her own"
+msgstr ""
+
 #: ridgerunner_app/templates/ridgerunner_app/litter.html:91
 msgid "Inbreeding coefficient"
 msgstr ""
@@ -625,11 +633,11 @@ msgstr ""
 msgid "Congrats to owner"
 msgstr ""
 
-#: ridgerunner_app/views.py:123
+#: ridgerunner_app/views.py:125
 msgid "Your message was successfully sent! We'll get back to you shortly."
 msgstr ""
 
-#: ridgerunner_app/views.py:130
+#: ridgerunner_app/views.py:132
 msgid "Your reCAPTCHA response couldn't be verified."
 msgstr ""
 
