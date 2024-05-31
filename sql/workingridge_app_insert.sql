@@ -1,3 +1,6 @@
+INSERT INTO date2(date) VALUES
+(CURDATE());
+
 INSERT INTO sport2(id, sport, parent) VALUES
 (1, 'Agility', NULL),
 (2, 'Freestyle', NULL),

@@ -17,13 +17,21 @@ main > section:first-child {
   display: flex;
   flex-direction: column;
   grid-column: 1/2;
-  grid-row: 1/3;
   row-gap: var(--g-bigger);
+}
+main > section:first-child[sv] {
+  grid-row: 1/2;
+}
+main > section:first-child:not([sv]) {
+  grid-row: 1/3;
 }
 main > .sidebar:nth-child(2) {
   grid-row: 1/2;
 }
-main > .sidebar:last-child:not([SV]) {
+main > .sidebar:last-child[sv] {
+  grid-row: 1/2;
+}
+main > .sidebar:last-child:not([sv]) {
   grid-row: 2/3;
 }
 
@@ -31,16 +39,22 @@ main > .sidebar:last-child:not([SV]) {
   main {
     grid-template-columns: 1fr;
   }
-  main > .sidebar:nth-child(2), main .sidebar:last-child:not([SV]) {
+  main > .sidebar {
     grid-column: 1/2;
   }
-  main > section:first-child:not([SV]) {
+  main > section:first-child[sv] {
+    grid-row: 2/3;
+  }
+  main > section:first-child:not([sv]) {
     grid-row: 3/4;
   }
   main > .sidebar:nth-child(2) {
     grid-row: 1/2;
   }
-  main > .sidebar:last-child:not([SV]) {
+  main > .sidebar:last-child[sv] {
+    grid-row: 1/2;
+  }
+  main > .sidebar:last-child:not([sv]) {
     grid-row: 2/3;
   }
 }

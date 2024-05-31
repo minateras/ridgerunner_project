@@ -46,7 +46,7 @@
                         <p>{{ litter.litter.mother.registration_number }}</p>
                     {% endif %}
                     {% if litter.litter.mother.first_name != None and litter.litter.mother.kennel_name != None %}
-                        <p>Läs mer om {{ litter.litter.mother.first_name }} på hennes egna <a href="../dogs/{{ litter.litter.mother.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
+                        <p>{% translate "Läs mer om" %} {{ litter.litter.mother.first_name }} {% translate "på hennes egna" %} <a href="../dogs/{{ litter.litter.mother.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
                     {% endif %}
                 </section>
             </div>
@@ -76,7 +76,7 @@
                         <p>{{ litter.litter.father.registration_number }}</p>
                     {% endif %}
                     {% comment %}{% if litter.litter.father.first_name != None and litter.litter.father.kennel_name != None %}
-                        <p>Läs mer om {{ litter.litter.father.first_name }} på hans egna <a href="../dogs/{{ litter.litter.father.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
+                        <p>{% translate "Läs mer om" %} {{ litter.litter.father.first_name }} {% translate "på hans egna" %} <a href="../dogs/{{ litter.litter.father.kennel_name|lower|switch_spaces_to_underscores }}">sida</a>.</p>
                     {% endif %}{% endcomment %}
                 </section>
             </div>
