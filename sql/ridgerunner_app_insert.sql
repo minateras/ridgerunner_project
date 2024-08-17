@@ -880,6 +880,10 @@ INSERT INTO competition_result(dog, sport, klass, results) VALUES
 (42, 2, 3, '[
     "2 starter, varav...",
     "186,5 poäng (uppflyttad)"
+]'),
+(42, 4, 5, '[
+    "1 start, varav...",
+    "1 excellent"
 ]');
 
 INSERT INTO litter(id, father, mother, letter, kennel_name, date_of_birth, inbreeding_coefficient, number_of_males, number_of_females, mentality_index, bph, mh) VALUES
