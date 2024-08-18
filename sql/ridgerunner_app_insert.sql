@@ -421,7 +421,7 @@ INSERT INTO dog(
 (
     23,
     NULL,
-    'Leia', 'Kadamo Ariya', '["SE VCH"]',
+    'Leia', 'Kadamo Ariya', '["NW 1", "SE VCH"]',
     'SE', '2021-07-21', 'SE57490/2021', 16, 15, 3.3, '1',
     NULL, NULL, NULL,
     'ridgerunner_app/assets/images/ideal/BPH.png',
