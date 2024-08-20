@@ -13,7 +13,7 @@
             <h3>SETT TILL ANTALET TITLAR</h3>
             <p>
                 De kennlar som har flest unika individer som erövrat titlar i hundsport sedan {{ year }}.
-                Det vill säga de kennlar som har minst {{ third_page.min_number_of_dogs }} {% if third_page.min_number_of_dogs|length > 0 %}individer{% else %}individ{% endif %} med titel.
+                Det vill säga de kennlar som har minst {{ third_page.min_number_of_dogs }} {% if third_page.min_number_of_dogs > 1 %}individer{% else %}individ{% endif %} med titel.
             </p>
             <p>
                 Observera att om flera kennlar har samma antal individer med titel så placeras de på delad listplats i alfabetisk ordning och efterföljande placeringar utgår.
