@@ -208,15 +208,27 @@ body {
 
                 > h3:nth-child(2) {
                     font-family: 'Roboto Mono';
-                    font-weight: 600;
                     font-size: var(--f-smallest);
+                    font-weight: 600;
                     letter-spacing: 1px;
                 }
             }
 
             .heading-mobile {
                 display: none;
-                font-size: var(--f-bigger);
+                flex-direction: column;
+                row-gap: var(--g-small);
+
+                > h1 {
+                    font-size: var(--f-bigger);
+                }
+
+                > h2 {
+                    font-family: 'Roboto Mono';
+                    font-size: var(--f-smallest);
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                }
             }
 
             .flex {
@@ -259,7 +271,7 @@ body {
                 }
 
                 .heading-mobile {
-                    display: block;
+                    display: flex;
                 }
             }
         }

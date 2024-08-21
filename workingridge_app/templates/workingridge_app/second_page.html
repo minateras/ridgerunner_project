@@ -64,7 +64,18 @@
                 Minst 10 hundar listas i de fall det finns fler individer än så.
             </p>
         </section>
-        <section class="heading-mobile">TOPP {{ second_page.number_of_dogs }} MEST FRAMGÅNGSRIKA HUNDARNA</section>
+        <section class="heading-mobile">
+            <h1>TOPP {{ second_page.number_of_dogs }} MEST FRAMGÅNGSRIKA HUNDARNA</h1>
+            <h2>SETT TILL ANTALET TITLAR</h2>
+            <p>
+                De individer som erövrat flest titlar i {% if second_page.sport.0 != 0 and second_page.exclusive == 1 %}{{ second_page.sport.1|lower }}{% else %}hundsport{% if second_page.sport.0 != 0 %}, inklusive {{ second_page.sport.1|lower }},{% endif %}{% endif %} sedan {{ year }}.
+                Det vill säga de hundar som har minst {{ second_page.min_number_of_titles }} {% if second_page.min_number_of_titles > 1 %}titlar{% else %}titel{% endif %}.
+            </p>
+            <p>
+                Observera att om flera hundar har samma antal titlar så placeras de på delad listplats i alfabetisk ordning och efterföljande placeringar utgår.
+                Minst 10 hundar listas i de fall det finns fler individer än så.
+            </p>
+        </section>
     </section>
     <div class="flex"></div>
 </div>
