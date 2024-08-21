@@ -22,7 +22,7 @@
                 {% for number_of_titles, dogs in second_page.dogs.items %}
                     {% for dog in dogs %}
                         <div class="placement{% if dog.1.odd %} odd{% endif %}">{{ dog.0 }}</div>
-                        <div class="number_of_titles{% if dog.1.odd %} odd{% endif %}">{{ number_of_titles }} TITLAR:</div>
+                        <div class="number_of_titles{% if dog.1.odd %} odd{% endif %}">{{ number_of_titles }} {% if number_of_titles > 1%}TITLAR{% else %}TITEL{% endif %}:</div>
                         <ul class="titles{% if dog.1.odd %} odd{% endif %}">
                             {% for title in dog.1.titles|string_to_list %}
                                 <li>{{ title }}</li>
