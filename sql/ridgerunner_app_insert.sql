@@ -578,7 +578,7 @@ INSERT INTO dog(
 (
     33,
     NULL, NULL,
-    'Lejonessa Taste Of Saffron', '["SE VCH"]',
+    'Lejonessa Taste Of Saffron', '["NO VCH", "SE VCH"]',
     NULL, NULL, NULL, NULL, NULL, NULL,
     '1',
     NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
@@ -704,9 +704,9 @@ INSERT INTO dog(
     '0',
     'A/A',
     '0/0',
-    NULL,
-    NULL,
-    NULL,
+    'N/N',
+    'N/N',
+    'N/N',
     NULL
 );
 
